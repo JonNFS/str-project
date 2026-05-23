@@ -1147,19 +1147,30 @@ document.getElementById('btn-logout-nomember').addEventListener('click', logout)
 
 let appInitialized = false;
 
+// Carregamento inicial via getSession (funciona no F5)
+(async () => {
+  try {
+    const { data: { session } } = await sb.auth.getSession();
+    if (session && !appInitialized) {
+      appInitialized = true;
+      await initApp(session.user, session);
+    } else if (!session) {
+      showView('v-login');
+    }
+  } catch(e) {
+    showView('v-login');
+  }
+})();
+
+// Escuta apenas login/logout do usuário
 sb.auth.onAuthStateChange(async (event, session) => {
-  if ((event === 'SIGNED_IN' || event === 'INITIAL_SESSION') && session && !appInitialized) {
+  if (event === 'SIGNED_IN' && session && !appInitialized) {
     appInitialized = true;
     await initApp(session.user, session);
-  } else if (event === 'INITIAL_SESSION' && session && appInitialized) {
-    // F5: app já iniciado, só recarrega produtos
-    await loadProducts();
   } else if (event === 'SIGNED_OUT') {
     appInitialized = false;
     state.user = null;
     state.cart = [];
-    showView('v-login');
-  } else if (event === 'INITIAL_SESSION' && !session) {
     showView('v-login');
   }
 });
