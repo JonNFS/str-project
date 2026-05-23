@@ -1115,7 +1115,9 @@ async function initApp(user, session) {
   // Mostra o app imediatamente sem esperar o checkAdmin
   showView('v-app');
   showSection('store');
+  console.log('antes do loadProducts');
   await loadProducts();
+  console.log('depois do loadProducts');
 
 // Checa admin em background sem bloquear
 setTimeout(async () => {
