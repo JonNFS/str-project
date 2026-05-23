@@ -940,6 +940,7 @@ async function initApp(user, session) {
 
   showView('v-app');
   showSection('store');
+  await loadStringsXml();
   await loadProducts();
 
   // Verifica nome do personagem
@@ -956,6 +957,25 @@ async function initApp(user, session) {
   }
   // Garante que os produtos carregaram
   if (!state.products.length) await loadProducts();
+}
+
+/* ═════════════════════════════════════════
+   STRINGS.XML
+═════════════════════════════════════════ */
+async function loadStringsXml() {
+  try {
+    const r = await fetch('/strings.xml');
+    if (!r.ok) return;
+    const txt = await r.text();
+    const doc = new DOMParser().parseFromString(txt, 'text/xml');
+    const map = {};
+    doc.querySelectorAll('STR[id]').forEach(el => {
+      const id = el.getAttribute('id') || '';
+      const m  = id.match(/^ZITEM_NAME_(\d+)$/);
+      if (m) map[m[1]] = el.textContent.trim();
+    });
+    state.itemMap = map;
+  } catch(e) {}
 }
 
 /* ═════════════════════════════════════════
@@ -1320,6 +1340,7 @@ let appInitialized = false;
       appInitialized = true;
       showView('v-app');
       showSection('store');
+      await loadStringsXml();
       await loadProducts();
       const { data: perfil } = await sb.from('perfis').select('nome_personagem').eq('discord_id', userData.id).maybeSingle();
       if (!perfil?.nome_personagem) {
