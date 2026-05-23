@@ -1116,13 +1116,15 @@ async function initApp(user, session) {
   showSection('store');
   await loadProducts();
 
-  // Checa admin em background sem bloquear
-  checkAdmin(discordId).then(isAdmin => {
-    state.isAdmin = isAdmin;
-    if (isAdmin) {
-      document.getElementById('nav-admin').classList.remove('hidden');
-    }
-  }).catch(() => {});
+// Checa admin em background sem bloquear
+  setTimeout(() => {
+    checkAdmin(discordId).then(isAdmin => {
+      state.isAdmin = isAdmin;
+      if (isAdmin) {
+        document.getElementById('nav-admin').classList.remove('hidden');
+      }
+    }).catch(() => {});
+  }, 1500);
 }
 
 /* ═════════════════════════════════════════
