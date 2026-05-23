@@ -896,14 +896,14 @@ function renderProductCard(p, i) {
     <div class="pc-name">${esc(p.nome)}</div>
     ${p.imagem_url ? `<img class="pc-img" src="${p.imagem_url}" alt="${p.nome}" onerror="this.style.display='none'">` : ''}
     <div class="pc-body">
-      ${qtyLine    ? `<div class="pc-qty">${qtyLine}</div>` : ''}
-      ${expiryStr  ? `<div class="pc-expiry">Disponível até ${expiryStr}</div>` : ''}
-      ${p.descricao ? `<div class="pc-items">Itens Inclusos <span class="pc-items-btn">?</span><div class="pc-tooltip">${esc(p.descricao)}</div></div>` : ''}
+      ${qtyLine   ? `<div class="pc-qty">${qtyLine}</div>` : ''}
+      ${expiryStr ? `<div class="pc-expiry">Disponível até ${expiryStr}</div>` : ''}
     </div>
     <div class="pc-footer">
       <div class="pc-price">${formatBRL(p.preco)}<small>/ único</small></div>
       <button class="btn-add" id="add-btn-${p.id}" onclick="addToCart('${p.id}')">Adicionar ao Carrinho</button>
     </div>
+    ${p.descricao ? `<div class="pc-desc-overlay"><p>${esc(p.descricao)}</p></div>` : ''}
   </div>`;
 }
 
@@ -921,13 +921,13 @@ function renderProducts(products) {
   }
 
   empty.classList.add('hidden');
-  const temMultiCat = CATEGORIAS.filter(c => products.some(p => (p.tipo_pacote || 'pacote') === c.key)).length > 1;
+  const multiCat = CATEGORIAS.filter(c => products.some(p => (p.tipo_pacote||'pacote') === c.key)).length > 1;
   let out = '';
   CATEGORIAS.forEach(cat => {
     const catProds = products.filter(p => (p.tipo_pacote || 'pacote') === cat.key);
     if (!catProds.length) return;
     out += `<div class="category-section">
-      ${temMultiCat ? `<div class="category-title"><h2>${cat.label}</h2></div>` : ''}
+      ${multiCat ? `<div class="category-title"><h2>${cat.label}</h2></div>` : ''}
       <div class="products-grid">${catProds.map((p,i) => renderProductCard(p,i)).join('')}</div>
     </div>`;
   });
@@ -1221,4 +1221,3 @@ sb.auth.onAuthStateChange(async (event, session) => {
 </script>
 </body>
 </html>
-
