@@ -661,34 +661,6 @@ header {
   font-size: 0.88rem; color: var(--text);
   line-height: 1.8; white-space: pre-line; width: 100%;
 }
-
-.ov-title {
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.9rem; font-weight: 800;
-  text-transform: uppercase; letter-spacing: 1px;
-  color: var(--accent-light);
-  text-align: center;
-  margin-bottom: 12px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(99,102,241,0.2);
-  width: 100%;
-}
-.ov-item {
-  font-size: 0.85rem; color: var(--text);
-  line-height: 1.7; padding: 2px 0;
-}
-.ov-desc {
-  font-size: 0.82rem; color: var(--muted2);
-  margin-top: 10px; line-height: 1.7;
-  white-space: pre-line;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  padding-top: 10px;
-}
-.pc-desc-overlay {
-  flex-direction: column;
-  align-items: flex-start;
-  overflow-y: auto;
-}
 </style>
 </head>
 <body>
@@ -851,7 +823,7 @@ let state = {
   user:     null,
   cart:     [],
   products: [],
-  itemMap:  {},   // {id: name} from strings.xml
+  itemMap:  {},
 };
 
 /* ═════════════════════════════════════════
@@ -946,8 +918,6 @@ async function initApp(user, session) {
 
   showView('v-app');
   showSection('store');
-
-  // Carrega strings.xml primeiro, depois produtos
   await loadStringsXml();
   await loadProducts();
 
@@ -969,23 +939,25 @@ async function initApp(user, session) {
 
 
 /* ═════════════════════════════════════════
-   STRINGS.XML
+   STRINGS.XML — mapa de itens
 ═════════════════════════════════════════ */
 async function loadStringsXml() {
   try {
     const r = await fetch('/strings.xml');
     if (!r.ok) return;
-    const txt = await r.text();
-    const parser = new DOMParser();
-    const doc    = parser.parseFromString(txt, 'text/xml');
-    const nodes  = doc.querySelectorAll('STR[id^="ZITEM_NAME_"]');
-    const map    = {};
-    nodes.forEach(el => {
-      const m = el.getAttribute('id').match(/ZITEM_NAME_(\d+)/);
+    const txt  = await r.text();
+    const doc  = new DOMParser().parseFromString(txt, 'text/xml');
+    const map  = {};
+    doc.querySelectorAll('STR[id]').forEach(el => {
+      const id = el.getAttribute('id') || '';
+      const m  = id.match(/^ZITEM_NAME_(\d+)$/);
       if (m) map[m[1]] = el.textContent.trim();
     });
     state.itemMap = map;
-  } catch(e) {}
+    console.log('strings.xml carregado:', Object.keys(map).length, 'itens');
+  } catch(e) {
+    console.warn('strings.xml falhou:', e);
+  }
 }
 
 /* ═════════════════════════════════════════
@@ -1029,10 +1001,10 @@ function renderProductCard(p, i) {
             : `Cash: ${n}`;
   }
 
-  // Monta overlay de itens
-  let overlayHtml = '';
+  // Monta overlay
   const hasItems = p.item_ids && p.item_ids.trim();
   const hasDesc  = p.descricao && p.descricao.trim();
+  let overlayHtml = '';
   if (hasItems || hasDesc) {
     let itemLines = '';
     if (hasItems) {
@@ -1345,6 +1317,7 @@ let appInitialized = false;
       appInitialized = true;
       showView('v-app');
       showSection('store');
+      await loadStringsXml();
       await loadProducts();
       const { data: perfil } = await sb.from('perfis').select('nome_personagem').eq('discord_id', userData.id).maybeSingle();
       if (!perfil?.nome_personagem) {
