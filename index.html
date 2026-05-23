@@ -1237,11 +1237,15 @@ async function checkout() {
 
   try {
     const itens = state.cart.map(({ produto, qty }) => ({
-      id:         produto.id,
-      nome:       produto.nome,
-      preco:      produto.preco,
-      quantidade: qty,
-      conteudo:   produto.conteudo || '',
+      id:               produto.id,
+      nome:             produto.nome,
+      preco:            produto.preco,
+      quantidade:       qty,
+      conteudo:         produto.conteudo || '',
+      item_ids:         produto.item_ids || '',
+      item_cash_values: produto.item_cash_values || '',
+      quantidade_cash:  produto.quantidade || 0,
+      tipo_pacote:      produto.tipo_pacote || 'pacote',
     }));
 
     const total = itens.reduce((s, i) => s + i.preco * i.quantidade, 0);
