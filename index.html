@@ -947,8 +947,8 @@ async function initApp(user, session) {
   showView('v-app');
   showSection('store');
 
-  // Carrega strings.xml em paralelo
-  loadStringsXml();
+  // Carrega strings.xml primeiro, depois produtos
+  await loadStringsXml();
   await loadProducts();
 
   // Verifica nome do personagem
