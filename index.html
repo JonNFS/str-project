@@ -827,6 +827,8 @@ async function initApp(user, session) {
   showView('v-app');
   showSection('store');
   await loadProducts();
+  console.log('loadProducts ok, verificando perfil...');
+  const nomePersonagem = await verificarPerfil(discordId);
 }
 
 /* ═════════════════════════════════════════
