@@ -1056,11 +1056,13 @@ async function checkGuildMember(userId, accessToken) {
 ═════════════════════════════════════════ */
 async function checkAdmin(discordId) {
   try {
-    const { data } = await sb
+    const { data, error } = await sb
       .from('admins')
       .select('discord_id')
       .eq('discord_id', discordId)
-      .single();
+      .single()
+      .abortSignal(AbortSignal.timeout(5000));
+    if (error) return false;
     return !!data;
   } catch {
     return false;
