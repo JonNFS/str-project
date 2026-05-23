@@ -1005,8 +1005,8 @@ async function loadProducts() {
 
 const CATEGORIAS = [
   { key: 'pacote',       label: 'Pacotes'         },
-  { key: 'especial',     label: 'Especiais'       },
-  { key: 'vip',          label: 'VIP'             },
+  { key: 'especial',     label: 'Pacotes Especiais' },
+  { key: 'cash',         label: 'Cash'            },
   { key: 'moedas_prata', label: 'Moedas de Prata' },
   { key: 'moedas_ouro',  label: 'Moedas de Ouro'  },
 ];
@@ -1237,15 +1237,11 @@ async function checkout() {
 
   try {
     const itens = state.cart.map(({ produto, qty }) => ({
-      id:               produto.id,
-      nome:             produto.nome,
-      preco:            produto.preco,
-      quantidade:       qty,
-      conteudo:         produto.conteudo || '',
-      item_ids:         produto.item_ids || '',
-      item_cash_values: produto.item_cash_values || '',
-      quantidade_cash:  produto.quantidade || 0,
-      tipo_pacote:      produto.tipo_pacote || 'pacote',
+      id:         produto.id,
+      nome:       produto.nome,
+      preco:      produto.preco,
+      quantidade: qty,
+      conteudo:   produto.conteudo || '',
     }));
 
     const total = itens.reduce((s, i) => s + i.preco * i.quantidade, 0);
