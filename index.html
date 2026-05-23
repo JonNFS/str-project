@@ -965,7 +965,14 @@ const CFG = {
    INIT SUPABASE
 ═════════════════════════════════════════ */
 const { createClient } = supabase;
-const sb = createClient(CFG.supabaseUrl, CFG.supabaseKey);
+const sb = createClient(CFG.supabaseUrl, CFG.supabaseKey, {
+  auth: {
+    storage: window.sessionStorage,
+    storageKey: 'supabase-auth',
+    autoRefreshToken: true,
+    persistSession: true,
+  }
+});
 
 /* ═════════════════════════════════════════
    STATE
