@@ -872,19 +872,17 @@ async function initApp(user, session) {
 ═════════════════════════════════════════ */
 async function loadProducts() {
   try {
-    const { data, error } = await Promise.race([
-      sb.from('produtos').select('*').eq('ativo', true).order('criado_em', { ascending: false }),
-      new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 5000))
-    ]);
-
-    if (error) throw error;
+    const { data, error } = await sb
+      .from('produtos')
+      .select('*')
+      .eq('ativo', true)
+      .order('criado_em', { ascending: false });
 
     state.products = data || [];
     renderProducts(state.products);
   } catch (e) {
-    console.log('loadProducts erro:', e.message);
-    // Tenta de novo após 2 segundos
-    setTimeout(() => loadProducts(), 2000);
+    state.products = [];
+    renderProducts([]);
   }
 }
 
