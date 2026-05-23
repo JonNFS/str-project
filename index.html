@@ -1047,10 +1047,11 @@ async function login() {
 }
 
 async function logout() {
-  await sb.auth.signOut();
+  appInitialized = false;
   state.user    = null;
   state.isAdmin = false;
   state.cart    = [];
+  await sb.auth.signOut();
   showView('v-login');
 }
 
@@ -1117,14 +1118,20 @@ async function initApp(user, session) {
   await loadProducts();
 
 // Checa admin em background sem bloquear
-  setTimeout(() => {
-    checkAdmin(discordId).then(isAdmin => {
-      state.isAdmin = isAdmin;
-      if (isAdmin) {
-        document.getElementById('nav-admin').classList.remove('hidden');
+  setTimeout(async () => {
+    for (let i = 0; i < 3; i++) {
+      try {
+        const isAdmin = await checkAdmin(discordId);
+        state.isAdmin = isAdmin;
+        if (isAdmin) {
+          document.getElementById('nav-admin').classList.remove('hidden');
+        }
+        break;
+      } catch {
+        await new Promise(r => setTimeout(r, 2000));
       }
-    }).catch(() => {});
-  }, 1500);
+    }
+  }, 2000);
 }
 
 /* ═════════════════════════════════════════
