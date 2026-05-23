@@ -1448,10 +1448,14 @@ document.getElementById('btn-login').addEventListener('click', login);
 document.getElementById('btn-join-server').href = CFG.discordInvite;
 document.getElementById('btn-logout-nomember').addEventListener('click', logout);
 
+let appInitialized = false;
+
 sb.auth.onAuthStateChange(async (event, session) => {
-  if (event === 'SIGNED_IN' && session) {
+  if (event === 'SIGNED_IN' && session && !appInitialized) {
+    appInitialized = true;
     await initApp(session.user, session);
   } else if (event === 'SIGNED_OUT') {
+    appInitialized = false;
     showView('v-login');
   }
 });
@@ -1459,6 +1463,7 @@ sb.auth.onAuthStateChange(async (event, session) => {
 (async () => {
   const { data: { session } } = await sb.auth.getSession();
   if (session) {
+    appInitialized = true;
     await initApp(session.user, session);
   } else {
     document.getElementById('btn-join-server').href = CFG.discordInvite;
