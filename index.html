@@ -649,17 +649,39 @@ header {
   position: absolute !important;
   inset: 0 !important;
   background: rgba(7,8,15,0.95);
-  padding: 20px 18px;
+  padding: 16px 18px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease;
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
   z-index: 10;
+  overflow-y: auto;
 }
 .product-card:hover .pc-desc-overlay { opacity: 1; }
-.pc-desc-overlay p {
-  font-size: 0.88rem; color: var(--text);
-  line-height: 1.8; white-space: pre-line; width: 100%;
+.ov-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.82rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1.5px;
+  color: var(--accent-light); text-align: center;
+  width: 100%;
+  padding-bottom: 10px; margin-bottom: 10px;
+  border-bottom: 1px solid rgba(99,102,241,0.25);
+  flex-shrink: 0;
+}
+.ov-item {
+  font-size: 0.84rem; color: var(--text);
+  line-height: 1; padding: 5px 0;
+  display: block; width: 100%;
+}
+.ov-desc {
+  font-size: 0.82rem; color: var(--muted2);
+  margin-top: 8px; line-height: 1.7;
+  white-space: pre-line;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 8px; width: 100%;
 }
 </style>
 </head>
@@ -820,10 +842,9 @@ const sb = createClient(CFG.supabaseUrl, CFG.supabaseKey, {
    STATE
 ═════════════════════════════════════════ */
 let state = {
-  user:     null,
-  cart:     [],
+  user:    null,
+  cart:    [],          // [{produto, qty}]
   products: [],
-  itemMap:  {},
 };
 
 /* ═════════════════════════════════════════
@@ -918,7 +939,6 @@ async function initApp(user, session) {
 
   showView('v-app');
   showSection('store');
-  await loadStringsXml();
   await loadProducts();
 
   // Verifica nome do personagem
@@ -935,29 +955,6 @@ async function initApp(user, session) {
   }
   // Garante que os produtos carregaram
   if (!state.products.length) await loadProducts();
-}
-
-
-/* ═════════════════════════════════════════
-   STRINGS.XML — mapa de itens
-═════════════════════════════════════════ */
-async function loadStringsXml() {
-  try {
-    const r = await fetch('/strings.xml');
-    if (!r.ok) return;
-    const txt  = await r.text();
-    const doc  = new DOMParser().parseFromString(txt, 'text/xml');
-    const map  = {};
-    doc.querySelectorAll('STR[id]').forEach(el => {
-      const id = el.getAttribute('id') || '';
-      const m  = id.match(/^ZITEM_NAME_(\d+)$/);
-      if (m) map[m[1]] = el.textContent.trim();
-    });
-    state.itemMap = map;
-    console.log('strings.xml carregado:', Object.keys(map).length, 'itens');
-  } catch(e) {
-    console.warn('strings.xml falhou:', e);
-  }
 }
 
 /* ═════════════════════════════════════════
@@ -1001,22 +998,22 @@ function renderProductCard(p, i) {
             : `Cash: ${n}`;
   }
 
-  // Monta overlay
+  // Monta overlay com cash/moedas primeiro, depois itens
   const hasItems = p.item_ids && p.item_ids.trim();
   const hasDesc  = p.descricao && p.descricao.trim();
   let overlayHtml = '';
-  if (hasItems || hasDesc) {
-    let itemLines = '';
+  if (hasItems || hasDesc || qtyLine) {
+    let lines = '';
+    if (qtyLine) lines += `<div class="ov-item">• ${qtyLine}</div>`;
     if (hasItems) {
-      const ids = p.item_ids.split(',').map(x => x.trim()).filter(Boolean);
-      itemLines = ids.map(id => {
+      p.item_ids.split(',').map(x => x.trim()).filter(Boolean).forEach(id => {
         const nome = state.itemMap[id] || `Item #${id}`;
-        return `<div class="ov-item">• ${esc(nome)}</div>`;
-      }).join('');
+        lines += `<div class="ov-item">• ${esc(nome)}</div>`;
+      });
     }
     overlayHtml = `<div class="pc-desc-overlay">
       <div class="ov-title">Inclusos no Pacote</div>
-      ${itemLines}
+      ${lines}
       ${hasDesc ? `<div class="ov-desc">${esc(p.descricao)}</div>` : ''}
     </div>`;
   }
@@ -1317,7 +1314,6 @@ let appInitialized = false;
       appInitialized = true;
       showView('v-app');
       showSection('store');
-      await loadStringsXml();
       await loadProducts();
       const { data: perfil } = await sb.from('perfis').select('nome_personagem').eq('discord_id', userData.id).maybeSingle();
       if (!perfil?.nome_personagem) {
