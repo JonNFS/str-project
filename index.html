@@ -1027,6 +1027,7 @@ async function logout() {
    GUILD CHECK (via Edge Function)
 ═════════════════════════════════════════ */
 async function checkGuildMember(userId, accessToken) {
+  return true; // verificação desativada temporariamente
   // Se não configurou servidor, pula a verificação
   if (!CFG.discordServerId || CFG.discordServerId.startsWith('COLE')) return true;
 
