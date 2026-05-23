@@ -1118,16 +1118,20 @@ async function initApp(user, session) {
   await loadProducts();
 
 // Checa admin em background sem bloquear
-  setTimeout(async () => {
+setTimeout(async () => {
+    console.log('checkAdmin iniciando para:', discordId);
     for (let i = 0; i < 3; i++) {
       try {
+        console.log('tentativa', i + 1);
         const isAdmin = await checkAdmin(discordId);
+        console.log('resultado:', isAdmin);
         state.isAdmin = isAdmin;
         if (isAdmin) {
           document.getElementById('nav-admin').classList.remove('hidden');
         }
         break;
-      } catch {
+      } catch(e) {
+        console.log('erro:', e);
         await new Promise(r => setTimeout(r, 2000));
       }
     }
