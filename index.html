@@ -968,11 +968,16 @@ async function loadProducts() {
       .eq('ativo', true)
       .order('criado_em', { ascending: false });
 
+    if (error) { console.error('loadProducts error:', error); return; }
     state.products = data || [];
-    renderProducts(state.products);
   } catch (e) {
-    state.products = [];
-    renderProducts([]);
+    console.error('loadProducts exception:', e);
+    return;
+  }
+  try {
+    renderProducts(state.products);
+  } catch(e) {
+    console.error('renderProducts error:', e);
   }
 }
 
