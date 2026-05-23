@@ -721,25 +721,9 @@ const CFG = {
    INIT SUPABASE
 ═════════════════════════════════════════ */
 const { createClient } = supabase;
-
-// Storage customizado usando cookies (mais confiável que localStorage)
-const cookieStorage = {
-  getItem(key) {
-    const match = document.cookie.match(new RegExp('(^| )' + key + '=([^;]+)'));
-    if (!match) return null;
-    try { return decodeURIComponent(match[2]); } catch { return null; }
-  },
-  setItem(key, value) {
-    document.cookie = key + '=' + encodeURIComponent(value) + '; path=/; max-age=604800; SameSite=Lax';
-  },
-  removeItem(key) {
-    document.cookie = key + '=; path=/; max-age=0';
-  }
-};
-
 const sb = createClient(CFG.supabaseUrl, CFG.supabaseKey, {
   auth: {
-    storage:            cookieStorage,
+    storage:            window.localStorage,
     storageKey:         'sb-auth',
     autoRefreshToken:   true,
     persistSession:     true,
@@ -836,6 +820,10 @@ async function initApp(user, session) {
   const avatar    = meta.avatar_url || `https://cdn.discordapp.com/embed/avatars/0.png`;
 
   state.user = { id: discordId, username, avatar };
+
+  // Salva dados do usuário em cookie para restaurar no F5
+  const userData = JSON.stringify({ id: discordId, username, avatar });
+  document.cookie = 'sb-user=' + encodeURIComponent(userData) + '; path=/; max-age=604800; SameSite=Lax';
 
   // Atualiza header
   document.getElementById('user-avatar').src = avatar;
@@ -1163,17 +1151,42 @@ document.getElementById('btn-logout-nomember').addEventListener('click', logout)
 
 let appInitialized = false;
 
+// Restaura sessão do cookie no F5
+(async () => {
+  try {
+    const match = document.cookie.match(/(^| )sb-user=([^;]+)/);
+    if (match && !appInitialized) {
+      const userData = JSON.parse(decodeURIComponent(match[2]));
+      state.user = userData;
+      document.getElementById('user-avatar').src = userData.avatar;
+      document.getElementById('user-name').textContent = userData.username;
+      document.getElementById('btn-join-server').href = CFG.discordInvite;
+      appInitialized = true;
+      showView('v-app');
+      showSection('store');
+      await loadProducts();
+      const { data: perfil } = await sb.from('perfis').select('nome_personagem').eq('discord_id', userData.id).maybeSingle();
+      if (!perfil?.nome_personagem) {
+        document.getElementById('modal-personagem').style.display = 'flex';
+      } else {
+        state.user.nomePersonagem = perfil.nome_personagem;
+      }
+      return;
+    }
+  } catch(e) {}
+  showView('v-login');
+})();
+
+// Escuta login/logout
 sb.auth.onAuthStateChange(async (event, session) => {
-  console.log('auth event:', event, 'appInitialized:', appInitialized, 'tem session:', !!session);
-  if ((event === 'SIGNED_IN' || event === 'INITIAL_SESSION') && session && !appInitialized) {
+  if (event === 'SIGNED_IN' && session && !appInitialized) {
     appInitialized = true;
     await initApp(session.user, session);
   } else if (event === 'SIGNED_OUT') {
     appInitialized = false;
     state.user = null;
-      state.cart = [];
-    showView('v-login');
-  } else if (event === 'INITIAL_SESSION' && !session) {
+    state.cart = [];
+    document.cookie = 'sb-user=; path=/; max-age=0';
     showView('v-login');
   }
 });
