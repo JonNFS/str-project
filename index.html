@@ -842,9 +842,10 @@ const sb = createClient(CFG.supabaseUrl, CFG.supabaseKey, {
    STATE
 ═════════════════════════════════════════ */
 let state = {
-  user:    null,
-  cart:    [],          // [{produto, qty}]
+  user:     null,
+  cart:     [],
   products: [],
+  itemMap:  {},
 };
 
 /* ═════════════════════════════════════════
