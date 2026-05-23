@@ -880,27 +880,26 @@ const CATEGORIAS = [
 function renderProductCard(p, i) {
   const expiracao = p.expiracao ? new Date(p.expiracao) : null;
   const expiryStr = expiracao
-    ? expiracao.toLocaleString('pt-BR', {day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'})
+    ? expiracao.toLocaleString('pt-BR',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'})
     : null;
-
   const tipo = p.tipo_pacote || 'pacote';
   let qtyLine = '';
   if (p.quantidade) {
     const n = Number(p.quantidade).toLocaleString('pt-BR');
-    if (tipo === 'moedas_prata')     qtyLine = `Moedas de Prata: ${n}`;
-    else if (tipo === 'moedas_ouro') qtyLine = `Moedas de Ouro: ${n}`;
-    else                             qtyLine = `Cash: ${n}`;
+    qtyLine = tipo==='moedas_prata' ? `Moedas de Prata: ${n}`
+            : tipo==='moedas_ouro'  ? `Moedas de Ouro: ${n}`
+            : `Cash: ${n}`;
   }
 
-  return `<div class="product-card ${p.destaque ? 'featured' : ''}" style="animation-delay:${i*0.06}s">
+  return `<div class="product-card ${p.destaque?'featured':''}" style="animation-delay:${i*0.06}s">
     <div class="pc-name">${esc(p.nome)}</div>
-    ${p.imagem_url ? `<img class="pc-img" src="${p.imagem_url}" alt="${p.nome}" onerror="this.style.display='none'">` : ''}
+    ${p.imagem_url?`<img class="pc-img" src="${p.imagem_url}" alt="${p.nome}" onerror="this.style.display='none'">` : ''}
     <div class="pc-body">
       ${qtyLine   ? `<div class="pc-qty">${qtyLine}</div>` : ''}
       ${expiryStr ? `<div class="pc-expiry">Disponível até ${expiryStr}</div>` : ''}
     </div>
     <div class="pc-footer">
-      <div class="pc-price">${formatBRL(p.preco)}<small>/ único</small></div>
+      <div class="pc-price">${formatBRL(p.preco)}<small> / único</small></div>
       <button class="btn-add" id="add-btn-${p.id}" onclick="addToCart('${p.id}')">Adicionar ao Carrinho</button>
     </div>
     ${p.descricao ? `<div class="pc-desc-overlay"><p>${esc(p.descricao)}</p></div>` : ''}
@@ -910,25 +909,21 @@ function renderProductCard(p, i) {
 function renderProducts(products) {
   const grid  = document.getElementById('products-grid');
   const empty = document.getElementById('empty-store');
-
   const agora = new Date();
   products = products.filter(p => !p.expiracao || new Date(p.expiracao) > agora);
 
   if (!products.length) {
-    grid.innerHTML = '';
-    empty.classList.remove('hidden');
-    return;
+    grid.innerHTML = ''; empty.classList.remove('hidden'); return;
   }
-
   empty.classList.add('hidden');
-  const multiCat = CATEGORIAS.filter(c => products.some(p => (p.tipo_pacote||'pacote') === c.key)).length > 1;
+  const multiCat = CATEGORIAS.filter(c => products.some(p=>(p.tipo_pacote||'pacote')===c.key)).length > 1;
   let out = '';
   CATEGORIAS.forEach(cat => {
-    const catProds = products.filter(p => (p.tipo_pacote || 'pacote') === cat.key);
+    const catProds = products.filter(p => (p.tipo_pacote||'pacote') === cat.key);
     if (!catProds.length) return;
     out += `<div class="category-section">
       ${multiCat ? `<div class="category-title"><h2>${cat.label}</h2></div>` : ''}
-      <div class="products-grid">${catProds.map((p,i) => renderProductCard(p,i)).join('')}</div>
+      <div class="products-grid">${catProds.map((p,i)=>renderProductCard(p,i)).join('')}</div>
     </div>`;
   });
   grid.innerHTML = out;
