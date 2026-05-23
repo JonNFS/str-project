@@ -867,6 +867,19 @@ async function initApp(user, session) {
   showView('v-app');
   showSection('store');
   await loadProducts();
+
+  // Verifica nome do personagem
+  const { data: perfil } = await sb
+    .from('perfis')
+    .select('nome_personagem')
+    .eq('discord_id', discordId)
+    .maybeSingle();
+
+  if (!perfil?.nome_personagem) {
+    document.getElementById('modal-personagem').style.display = 'flex';
+  } else {
+    state.user.nomePersonagem = perfil.nome_personagem;
+  }
 }
 
 /* ═════════════════════════════════════════
