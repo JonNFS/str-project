@@ -850,21 +850,18 @@ async function initApp(user, session) {
    PRODUCTS
 ═════════════════════════════════════════ */
 async function loadProducts() {
-  for (let i = 0; i < 5; i++) {
-    try {
-      const { data, error } = await sb
-        .from('produtos')
-        .select('*')
-        .eq('ativo', true)
-        .order('criado_em', { ascending: false });
+  try {
+    const { data, error } = await sb
+      .from('produtos')
+      .select('*')
+      .eq('ativo', true)
+      .order('criado_em', { ascending: false });
 
-      if (data && data.length >= 0) {
-        state.products = data;
-        renderProducts(state.products);
-        return;
-      }
-    } catch (e) {}
-    await new Promise(r => setTimeout(r, 1000));
+    state.products = data || [];
+    renderProducts(state.products);
+  } catch (e) {
+    state.products = [];
+    renderProducts([]);
   }
 }
 
@@ -1151,14 +1148,16 @@ document.getElementById('btn-logout-nomember').addEventListener('click', logout)
 let appInitialized = false;
 
 sb.auth.onAuthStateChange(async (event, session) => {
-  console.log('auth event:', event, 'appInitialized:', appInitialized, 'tem session:', !!session);
   if ((event === 'SIGNED_IN' || event === 'INITIAL_SESSION') && session && !appInitialized) {
     appInitialized = true;
     await initApp(session.user, session);
+  } else if (event === 'INITIAL_SESSION' && session && appInitialized) {
+    // F5: app já iniciado, só recarrega produtos
+    await loadProducts();
   } else if (event === 'SIGNED_OUT') {
     appInitialized = false;
     state.user = null;
-      state.cart = [];
+    state.cart = [];
     showView('v-login');
   } else if (event === 'INITIAL_SESSION' && !session) {
     showView('v-login');
