@@ -683,6 +683,62 @@ header {
   </div>
 </div>
 
+    <input type="hidden" id="prod-id"/>
+    <div class="form-group">
+      <label class="form-label">Nome do produto *</label>
+      <input class="form-input" id="prod-nome" type="text" placeholder="Ex: Pacote Ouro"/>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Descrição</label>
+      <textarea class="form-textarea" id="prod-desc" placeholder="Descreva o que o pacote inclui..."></textarea>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Preço (R$) *</label>
+        <input class="form-input" id="prod-preco" type="number" step="0.01" min="0" placeholder="49.90"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">URL da imagem</label>
+        <input class="form-input" id="prod-imagem" type="url" placeholder="https://..."/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Conteúdo (aparece na notificação)</label>
+      <input class="form-input" id="prod-conteudo" type="text" placeholder="Ex: 1500 Cash + Item Exclusivo"/>
+    </div>
+    <div class="form-row" style="margin-top:18px">
+      <div class="form-toggle">
+        <span>Ativo (visível na loja)</span>
+        <button class="toggle-switch on" id="toggle-ativo" onclick="toggleField(this)"></button>
+      </div>
+      <div class="form-toggle">
+        <span>Destaque</span>
+        <button class="toggle-switch" id="toggle-destaque" onclick="toggleField(this)"></button>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeProductModal()">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══ MODAL NOME DO PERSONAGEM ═══ -->
+<div class="modal-backdrop" id="modal-personagem" style="display:none;position:fixed;inset:0;z-index:100;background:rgba(0,0,0,0.8);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px">
+  <div style="background:#0d0f1a;border:1px solid rgba(255,255,255,0.12);border-radius:24px;padding:36px;width:100%;max-width:420px;animation:modalIn 0.25s ease;box-shadow:0 40px 80px rgba(0,0,0,0.6)">
+    <div style="font-size:2rem;margin-bottom:12px">🎮</div>
+    <h2 style="font-family:Outfit,sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:8px">Nome do Personagem</h2>
+    <p style="color:#94a3b8;font-size:0.9rem;margin-bottom:24px;line-height:1.5">Digite o nome exato do seu personagem no jogo. Ele será usado para identificar sua compra.</p>
+    <div style="background:#131627;border:1px solid rgba(255,255,255,0.12);border-radius:10px;overflow:hidden;margin-bottom:20px">
+      <input id="input-personagem" type="text" placeholder="Ex: FlashTD"
+        style="width:100%;background:transparent;border:none;padding:14px 16px;color:#f1f5f9;font-family:Outfit,sans-serif;font-size:1rem;outline:none"/>
+    </div>
+    <button id="btn-salvar-personagem" onclick="salvarPersonagem()"
+      style="width:100%;background:#6366f1;border:none;border-radius:12px;padding:14px;color:#fff;font-family:Outfit,sans-serif;font-size:1rem;font-weight:700;cursor:pointer;transition:all 0.2s">
+      Confirmar e entrar na loja →
+    </button>
+  </div>
+</div>
 
 <!-- ═══ TOAST CONTAINER ═══ -->
 <div id="toast-container"></div>
@@ -970,6 +1026,47 @@ function toggleCart() {
   document.body.style.overflow = isOpen ? '' : 'hidden';
 }
 
+
+/* ═════════════════════════════════════════
+   PERFIL / NOME DO PERSONAGEM
+═════════════════════════════════════════ */
+async function verificarPerfil(discordId) {
+  try {
+    const { data } = await sb
+      .from('perfis')
+      .select('nome_personagem')
+      .eq('discord_id', discordId)
+      .single();
+    return data?.nome_personagem ?? null;
+  } catch {
+    return null;
+  }
+}
+
+async function salvarPersonagem() {
+  const nome = document.getElementById('input-personagem').value.trim();
+  if (!nome) { toast('Digite o nome do personagem.', 'error'); return; }
+
+  const btn = document.getElementById('btn-salvar-personagem');
+  btn.textContent = 'Salvando...';
+  btn.disabled = true;
+
+  try {
+    await sb.from('perfis').upsert({
+      discord_id:      state.user.id,
+      nome_personagem: nome,
+      atualizado_em:   new Date().toISOString(),
+    });
+    state.user.nomePersonagem = nome;
+    document.getElementById('modal-personagem').style.display = 'none';
+    toast(`Bem-vindo, ${nome}! ✅`, 'success');
+  } catch(e) {
+    toast('Erro ao salvar. Tente novamente.', 'error');
+    btn.textContent = 'Confirmar e entrar na loja →';
+    btn.disabled = false;
+  }
+}
+
 /* ═════════════════════════════════════════
    CHECKOUT
 ═════════════════════════════════════════ */
@@ -998,6 +1095,7 @@ async function checkout() {
         discord_id:       state.user.id,
         discord_username: state.user.username,
         discord_avatar:   state.user.avatar,
+        nome_personagem:  state.user.nomePersonagem ?? '',
       }
     });
 
