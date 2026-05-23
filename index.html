@@ -683,44 +683,6 @@ header {
   </div>
 </div>
 
-    <input type="hidden" id="prod-id"/>
-    <div class="form-group">
-      <label class="form-label">Nome do produto *</label>
-      <input class="form-input" id="prod-nome" type="text" placeholder="Ex: Pacote Ouro"/>
-    </div>
-    <div class="form-group">
-      <label class="form-label">Descrição</label>
-      <textarea class="form-textarea" id="prod-desc" placeholder="Descreva o que o pacote inclui..."></textarea>
-    </div>
-    <div class="form-row">
-      <div class="form-group">
-        <label class="form-label">Preço (R$) *</label>
-        <input class="form-input" id="prod-preco" type="number" step="0.01" min="0" placeholder="49.90"/>
-      </div>
-      <div class="form-group">
-        <label class="form-label">URL da imagem</label>
-        <input class="form-input" id="prod-imagem" type="url" placeholder="https://..."/>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="form-label">Conteúdo (aparece na notificação)</label>
-      <input class="form-input" id="prod-conteudo" type="text" placeholder="Ex: 1500 Cash + Item Exclusivo"/>
-    </div>
-    <div class="form-row" style="margin-top:18px">
-      <div class="form-toggle">
-        <span>Ativo (visível na loja)</span>
-        <button class="toggle-switch on" id="toggle-ativo" onclick="toggleField(this)"></button>
-      </div>
-      <div class="form-toggle">
-        <span>Destaque</span>
-        <button class="toggle-switch" id="toggle-destaque" onclick="toggleField(this)"></button>
-      </div>
-    </div>
-    <div class="modal-actions">
-      <button class="btn-cancel" onclick="closeProductModal()">Cancelar</button>
-    </div>
-  </div>
-</div>
 
 
 <!-- ═══ MODAL NOME DO PERSONAGEM ═══ -->
@@ -865,15 +827,6 @@ async function initApp(user, session) {
   showView('v-app');
   showSection('store');
   await loadProducts();
-
-  // Verifica nome do personagem
-  const nomePersonagem = await verificarPerfil(discordId);
-  console.log('nomePersonagem:', nomePersonagem);
-  if (!nomePersonagem) {
-    document.getElementById('modal-personagem').style.display = 'flex';
-  } else {
-    state.user.nomePersonagem = nomePersonagem;
-  }
 }
 
 /* ═════════════════════════════════════════
