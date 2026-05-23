@@ -966,7 +966,8 @@ async function loadStringsXml() {
   try {
     const r = await fetch('/strings.xml');
     if (!r.ok) return;
-    const txt = await r.text();
+    const buffer = await r.arrayBuffer();
+    const txt = new TextDecoder('utf-8').decode(buffer);
     const doc = new DOMParser().parseFromString(txt, 'text/xml');
     const map = {};
     doc.querySelectorAll('STR[id]').forEach(el => {
