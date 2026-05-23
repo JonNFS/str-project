@@ -842,6 +842,8 @@ async function initApp(user, session) {
   } else {
     state.user.nomePersonagem = perfil.nome_personagem;
   }
+  // Garante que os produtos carregaram
+  if (!state.products.length) await loadProducts();
 }
 
 /* ═════════════════════════════════════════
