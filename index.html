@@ -847,20 +847,6 @@ async function initApp(user, session) {
   showView('v-app');
   showSection('store');
   await loadProducts();
-
-// Checa admin em background sem bloquear
-setTimeout(async () => {
-    for (let i = 0; i < 3; i++) {
-      try {
-        console.log('tentativa', i + 1);
-        }
-        break;
-      } catch(e) {
-        console.log('erro:', e);
-        await new Promise(r => setTimeout(r, 2000));
-      }
-    }
-  }, 2000);
 }
 
 /* ═════════════════════════════════════════
