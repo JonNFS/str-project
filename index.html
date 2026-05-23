@@ -661,6 +661,34 @@ header {
   font-size: 0.88rem; color: var(--text);
   line-height: 1.8; white-space: pre-line; width: 100%;
 }
+
+.ov-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  color: var(--accent-light);
+  text-align: center;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(99,102,241,0.2);
+  width: 100%;
+}
+.ov-item {
+  font-size: 0.85rem; color: var(--text);
+  line-height: 1.7; padding: 2px 0;
+}
+.ov-desc {
+  font-size: 0.82rem; color: var(--muted2);
+  margin-top: 10px; line-height: 1.7;
+  white-space: pre-line;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 10px;
+}
+.pc-desc-overlay {
+  flex-direction: column;
+  align-items: flex-start;
+  overflow-y: auto;
+}
 </style>
 </head>
 <body>
@@ -820,9 +848,10 @@ const sb = createClient(CFG.supabaseUrl, CFG.supabaseKey, {
    STATE
 ═════════════════════════════════════════ */
 let state = {
-  user:    null,
-  cart:    [],          // [{produto, qty}]
+  user:     null,
+  cart:     [],
   products: [],
+  itemMap:  {},   // {id: name} from strings.xml
 };
 
 /* ═════════════════════════════════════════
@@ -917,6 +946,9 @@ async function initApp(user, session) {
 
   showView('v-app');
   showSection('store');
+
+  // Carrega strings.xml em paralelo
+  loadStringsXml();
   await loadProducts();
 
   // Verifica nome do personagem
@@ -933,6 +965,27 @@ async function initApp(user, session) {
   }
   // Garante que os produtos carregaram
   if (!state.products.length) await loadProducts();
+}
+
+
+/* ═════════════════════════════════════════
+   STRINGS.XML
+═════════════════════════════════════════ */
+async function loadStringsXml() {
+  try {
+    const r = await fetch('/strings.xml');
+    if (!r.ok) return;
+    const txt = await r.text();
+    const parser = new DOMParser();
+    const doc    = parser.parseFromString(txt, 'text/xml');
+    const nodes  = doc.querySelectorAll('STR[id^="ZITEM_NAME_"]');
+    const map    = {};
+    nodes.forEach(el => {
+      const m = el.getAttribute('id').match(/ZITEM_NAME_(\d+)/);
+      if (m) map[m[1]] = el.textContent.trim();
+    });
+    state.itemMap = map;
+  } catch(e) {}
 }
 
 /* ═════════════════════════════════════════
@@ -976,6 +1029,26 @@ function renderProductCard(p, i) {
             : `Cash: ${n}`;
   }
 
+  // Monta overlay de itens
+  let overlayHtml = '';
+  const hasItems = p.item_ids && p.item_ids.trim();
+  const hasDesc  = p.descricao && p.descricao.trim();
+  if (hasItems || hasDesc) {
+    let itemLines = '';
+    if (hasItems) {
+      const ids = p.item_ids.split(',').map(x => x.trim()).filter(Boolean);
+      itemLines = ids.map(id => {
+        const nome = state.itemMap[id] || `Item #${id}`;
+        return `<div class="ov-item">• ${esc(nome)}</div>`;
+      }).join('');
+    }
+    overlayHtml = `<div class="pc-desc-overlay">
+      <div class="ov-title">Inclusos no Pacote</div>
+      ${itemLines}
+      ${hasDesc ? `<div class="ov-desc">${esc(p.descricao)}</div>` : ''}
+    </div>`;
+  }
+
   return `<div class="product-card ${p.destaque?'featured':''}" style="animation-delay:${i*0.06}s">
     <div class="pc-name">${esc(p.nome)}</div>
     ${p.imagem_url?`<img class="pc-img" src="${p.imagem_url}" alt="${p.nome}" onerror="this.style.display='none'">` : ''}
@@ -987,7 +1060,7 @@ function renderProductCard(p, i) {
       <div class="pc-price">${formatBRL(p.preco)}<small> / único</small></div>
       <button class="btn-add" id="add-btn-${p.id}" onclick="addToCart('${p.id}')">Adicionar ao Carrinho</button>
     </div>
-    ${p.descricao ? `<div class="pc-desc-overlay"><p>${esc(p.descricao)}</p></div>` : ''}
+    ${overlayHtml}
   </div>`;
 }
 
