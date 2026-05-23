@@ -1491,8 +1491,8 @@ document.getElementById('btn-logout-nomember').addEventListener('click', logout)
 let appInitialized = false;
 
 sb.auth.onAuthStateChange(async (event, session) => {
-  console.log('auth event:', event, session);
-  if (session && !appInitialized) {
+  console.log('auth event:', event, 'appInitialized:', appInitialized, 'tem session:', !!session);
+  if ((event === 'SIGNED_IN' || event === 'INITIAL_SESSION') && session && !appInitialized) {
     appInitialized = true;
     await initApp(session.user, session);
   } else if (event === 'SIGNED_OUT') {
@@ -1501,7 +1501,7 @@ sb.auth.onAuthStateChange(async (event, session) => {
     state.isAdmin = false;
     state.cart = [];
     showView('v-login');
-  } else if (!session && !appInitialized) {
+  } else if (event === 'INITIAL_SESSION' && !session) {
     showView('v-login');
   }
 });
