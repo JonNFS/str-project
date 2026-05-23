@@ -967,10 +967,9 @@ const CFG = {
 const { createClient } = supabase;
 const sb = createClient(CFG.supabaseUrl, CFG.supabaseKey, {
   auth: {
-    storage: window.sessionStorage,
-    storageKey: 'supabase-auth',
     autoRefreshToken: true,
     persistSession: true,
+    detectSessionInUrl: true,
   }
 });
 
@@ -1073,31 +1072,22 @@ async function initApp(user, session) {
   showView('v-loading');
   document.querySelector('#v-loading p').textContent = 'Verificando servidor...';
 
-  const meta       = user.user_metadata;
-  const discordId  = meta.provider_id || meta.sub || user.id;
-  const username   = meta.full_name || meta.custom_claims?.global_name || meta.name || 'Usuário';
-  const avatar     = meta.avatar_url || `https://cdn.discordapp.com/embed/avatars/0.png`;
-
-  // Verifica membership
-  const isMember = await checkGuildMember(discordId, session?.provider_token);
-  if (!isMember) {
-    document.getElementById('btn-join-server-2').href = CFG.discordInvite;
-    showView('v-no-member');
-    return;
-  }
+  const meta      = user.user_metadata;
+  const discordId = meta.provider_id || meta.sub || user.id;
+  const username  = meta.full_name || meta.custom_claims?.global_name || meta.name || 'Usuário';
+  const avatar    = meta.avatar_url || `https://cdn.discordapp.com/embed/avatars/0.png`;
 
   // Verifica admin
   state.user    = { id: discordId, username, avatar };
   state.isAdmin = await checkAdmin(discordId);
 
   // Atualiza header
-  document.getElementById('user-avatar').src  = avatar;
+  document.getElementById('user-avatar').src = avatar;
   document.getElementById('user-name').textContent = username;
   if (state.isAdmin) {
     document.getElementById('nav-admin').classList.remove('hidden');
   }
 
-  // Atualiza link de convite
   document.getElementById('btn-join-server').href = CFG.discordInvite;
 
   showView('v-app');
