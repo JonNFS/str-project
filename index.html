@@ -646,7 +646,7 @@ header {
       <h1>Pacotes disponíveis</h1>
       <p>Adicione itens ao carrinho e finalize sua compra</p>
     </div>
-    <div id="products-grid">
+    <div class="products-grid" id="products-grid">
       <!-- products rendered here -->
     </div>
     <div class="empty-store hidden" id="empty-store">
@@ -785,15 +785,19 @@ async function logout() {
 /* ═════════════════════════════════════════
    GUILD CHECK (via Edge Function)
 ═════════════════════════════════════════ */
-async function checkGuildMember(userId) {
+async function checkGuildMember(userId, accessToken) {
+  return true; // verificação desativada temporariamente
+  // Se não configurou servidor, pula a verificação
   if (!CFG.discordServerId || CFG.discordServerId.startsWith('COLE')) return true;
+
   try {
     const { data, error } = await sb.functions.invoke('check-member', {
       body: { discord_id: userId }
     });
     if (error) throw error;
-    return data?.isMember ?? true;
+    return data?.isMember ?? false;
   } catch {
+    // Se a edge function não estiver deployada, permite acesso
     return true;
   }
 }
@@ -814,14 +818,6 @@ async function initApp(user, session) {
   const discordId = meta.provider_id || meta.sub || user.id;
   const username  = meta.full_name || meta.custom_claims?.global_name || meta.name || 'Usuário';
   const avatar    = meta.avatar_url || `https://cdn.discordapp.com/embed/avatars/0.png`;
-
-  // Verifica membro no servidor Discord
-  const isMember = await checkGuildMember(discordId);
-  if (!isMember) {
-    document.getElementById('btn-join-server-2').href = CFG.discordInvite;
-    showView('v-no-member');
-    return;
-  }
 
   state.user = { id: discordId, username, avatar };
 
@@ -869,63 +865,9 @@ async function loadProducts() {
   }
 }
 
-const CATEGORIAS = [
-  { key: 'cash',           label: 'Cash',               icon: '💰' },
-  { key: 'itens',          label: 'Itens',              icon: '📦' },
-  { key: 'itens_cash',     label: 'Itens + Cash',       icon: '🎁' },
-  { key: 'moedas_prata',   label: 'Moedas de Prata',    icon: '🥈' },
-  { key: 'moedas_ouro',    label: 'Moedas de Ouro',     icon: '🥇' },
-];
-
-function renderProductCard(p, i) {
-  const diasRestantes = p.expiracao
-    ? Math.ceil((new Date(p.expiracao) - new Date()) / 86400000)
-    : null;
-
-  const qtyLabel = {
-    cash:         p.quantidade ? `💰 ${Number(p.quantidade).toLocaleString('pt-BR')} Cash` : '',
-    itens_cash:   p.quantidade ? `💰 ${Number(p.quantidade).toLocaleString('pt-BR')} Cash` : '',
-    moedas_prata: p.quantidade ? `🥈 ${Number(p.quantidade).toLocaleString('pt-BR')} Moedas de Prata` : '',
-    moedas_ouro:  p.quantidade ? `🥇 ${Number(p.quantidade).toLocaleString('pt-BR')} Moedas de Ouro` : '',
-  }[p.tipo_pacote] || '';
-
-  return `
-    <div class="product-card ${p.destaque ? 'featured' : ''}" style="animation-delay:${i*0.06}s">
-      ${diasRestantes !== null && diasRestantes <= 7 ? `<div class="product-expiry">⏳ ${diasRestantes}d restantes</div>` : ''}
-      ${p.imagem_url
-        ? `<img class="product-img" src="${p.imagem_url}" alt="${p.nome}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
-        : ''}
-      <div class="product-img-placeholder" ${p.imagem_url ? 'style="display:none"' : ''}>📦</div>
-
-      <!-- Hover com descrição -->
-      ${p.descricao ? `
-      <div class="product-hover-desc">
-        <h3>${esc(p.nome)}</h3>
-        ${qtyLabel ? `<div class="product-qty-badge">${qtyLabel}</div>` : ''}
-        <p>${esc(p.descricao)}</p>
-      </div>` : ''}
-
-      <div class="product-body">
-        <div class="product-badges">
-          ${p.destaque ? '<span class="badge badge-featured">⭐ Destaque</span>' : ''}
-        </div>
-        <div class="product-name">${esc(p.nome)}</div>
-        ${qtyLabel ? `<div style="font-size:0.8rem;color:var(--accent-light);font-weight:600;margin-bottom:8px">${qtyLabel}</div>` : ''}
-        <div class="product-footer">
-          <div class="product-price">${formatBRL(p.preco)}<br><small>/ único</small></div>
-          <button class="btn-add" id="add-btn-${p.id}" onclick="addToCart('${p.id}')">+ Carrinho</button>
-        </div>
-      </div>
-    </div>`;
-}
-
 function renderProducts(products) {
   const grid  = document.getElementById('products-grid');
   const empty = document.getElementById('empty-store');
-
-  // Desativa expirados localmente
-  const agora = new Date();
-  products = products.filter(p => !p.expiracao || new Date(p.expiracao) > agora);
 
   if (!products.length) {
     grid.innerHTML = '';
@@ -934,26 +876,30 @@ function renderProducts(products) {
   }
 
   empty.classList.add('hidden');
-
-  // Agrupa por categoria
-  let html = '';
-  CATEGORIAS.forEach(cat => {
-    const catProds = products.filter(p => (p.tipo_pacote || 'itens') === cat.key);
-    if (!catProds.length) return;
-    html += `
-      <div class="category-section">
-        <div class="category-title">
-          <span class="cat-icon">${cat.icon}</span>
-          <h2>${cat.label}</h2>
-          <span class="cat-count">${catProds.length} pacote${catProds.length > 1 ? 's' : ''}</span>
+  grid.innerHTML = products.map((p, i) => `
+    <div class="product-card ${p.destaque ? 'featured' : ''}"
+         style="animation-delay:${i * 0.06}s">
+      ${p.imagem_url
+        ? `<img class="product-img" src="${p.imagem_url}" alt="${p.nome}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+        : ''}
+      <div class="product-img-placeholder" ${p.imagem_url ? 'style="display:none"' : ''}>📦</div>
+      <div class="product-body">
+        <div class="product-badges">
+          ${p.destaque ? '<span class="badge badge-featured">⭐ Destaque</span>' : ''}
         </div>
-        <div class="products-grid">
-          ${catProds.map((p, i) => renderProductCard(p, i)).join('')}
+        <div class="product-name">${esc(p.nome)}</div>
+        <div class="product-desc">${esc(p.descricao || '')}</div>
+        <div class="product-footer">
+          <div class="product-price">
+            ${formatBRL(p.preco)}<br><small>/ único</small>
+          </div>
+          <button class="btn-add" id="add-btn-${p.id}" onclick="addToCart('${p.id}')">
+            + Carrinho
+          </button>
         </div>
-      </div>`;
-  });
-
-  grid.innerHTML = html;
+      </div>
+    </div>
+  `).join('');
 }
 
 /* ═════════════════════════════════════════
