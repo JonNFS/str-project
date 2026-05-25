@@ -837,7 +837,7 @@ const sb = createClient(CFG.supabaseUrl, CFG.supabaseKey, {
     storageKey:         'sb-auth',
     autoRefreshToken:   true,
     persistSession:     true,
-    detectSessionInUrl: false,
+    detectSessionInUrl: true,
   }
 });
 
