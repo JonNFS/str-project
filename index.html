@@ -897,11 +897,8 @@ async function logout() {
 /* ═════════════════════════════════════════
    GUILD CHECK (via Edge Function)
 ═════════════════════════════════════════ */
-async function checkGuildMember(userId, accessToken) {
-  return true; // verificação desativada temporariamente
-  // Se não configurou servidor, pula a verificação
+async function checkGuildMember(userId) {
   if (!CFG.discordServerId || CFG.discordServerId.startsWith('COLE')) return true;
-
   try {
     const { data, error } = await sb.functions.invoke('check-member', {
       body: { discord_id: userId }
@@ -909,7 +906,6 @@ async function checkGuildMember(userId, accessToken) {
     if (error) throw error;
     return data?.isMember ?? false;
   } catch {
-    // Se a edge function não estiver deployada, permite acesso
     return true;
   }
 }
