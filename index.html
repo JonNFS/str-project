@@ -593,7 +593,6 @@ header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-
         <button class="roleta-result-close" onclick="fecharRoleta()">← Fechar</button>
       </div>
     </div>
-    <button class="btn-modal-sec" onclick="fecharRoleta()" style="margin:0 24px 16px">Fechar</button>
   </div>
 </div>
 
@@ -2487,11 +2486,11 @@ function _mostrarResultado(data) {
   const label = data.label;
 
   if (tipo === 'nada') {
-    emoji.textContent  = '\U0001f614';
+    emoji.textContent  = '😔';
     titulo.textContent = 'Tente sua sorte amanhã!';
     sub.textContent    = 'Não foi dessa vez. Volte amanhã para girar novamente.';
   } else if (tipo === 'cupom' && data.cupom) {
-    emoji.textContent  = '\U0001f3ab';
+    emoji.textContent  = '🎫';
     titulo.textContent = label + ' de Desconto!';
     sub.textContent    = 'Use o cupom abaixo ao finalizar sua compra. Válido por 7 dias.';
     cupomBox.style.display  = 'flex';
@@ -2500,14 +2499,14 @@ function _mostrarResultado(data) {
     const inputCupom = document.getElementById('input-cupom');
     if (inputCupom) inputCupom.value = data.cupom;
   } else if (tipo === 'vip') {
-    emoji.textContent  = '\U0001f451';
+    emoji.textContent  = '👑';
     titulo.textContent = 'VIP Ativado!';
     sub.textContent    = data.entregue
       ? label + ' ativado na sua conta com sucesso!'
       : 'Prêmio: ' + label + '. Configure seu personagem para receber.';
   } else if (['cash','prata','ouro','item'].includes(tipo)) {
-    const emojiMap = { cash: '\U0001f4b0', prata: '\U0001f948', ouro: '\U0001f947', item: '\U0001f381' };
-    emoji.textContent  = emojiMap[tipo] || '\U0001f381';
+    const emojiMap = { cash: '💰', prata: '🥈', ouro: '🥇', item: '🎁' };
+    emoji.textContent  = emojiMap[tipo] || '🎁';
     titulo.textContent = 'Você ganhou ' + label + '!';
     sub.textContent    = data.entregue
       ? 'Entregue automaticamente na sua conta!'
@@ -2515,7 +2514,7 @@ function _mostrarResultado(data) {
         ? 'Configure seu personagem no perfil para receber!'
         : 'Prêmio registrado!';
   } else {
-    emoji.textContent  = '\U0001f381';
+    emoji.textContent  = '🎁';
     titulo.textContent = 'Parabéns! ' + label;
     sub.textContent    = data.entregue ? 'Entregue com sucesso!' : 'Prêmio registrado!';
   }
@@ -2525,7 +2524,7 @@ function _mostrarResultado(data) {
 }
 
 function _lancarConfetti() {
-  if (document.getElementById('roleta-result-card')?.querySelector('.roleta-result-emoji')?.textContent === '\U0001f614') return;
+  if (document.getElementById('roleta-result-card')?.querySelector('.roleta-result-emoji')?.textContent === '😔') return;
   const cores = ['#f59e0b','#6366f1','#22c55e','#ec4899','#3b82f6','#f97316'];
   const card  = document.getElementById('roleta-result-card');
   if (!card) return;
