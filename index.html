@@ -567,7 +567,8 @@ header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-
 <!-- ── Modal Roleta ──────────────────────────────────────────────── -->
 <div class="modal-back" id="modal-roleta">
   <div class="modal-card">
-    <div class="roleta-hdr">
+    <div class="roleta-hdr" style="position:relative">
+      <button onclick="fecharRoleta()" style="position:absolute;top:0;right:0;background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer;padding:4px 8px;line-height:1" title="Fechar">✕</button>
       <div style="font-size:2rem;margin-bottom:6px">🎡</div>
       <h2>Roleta Diária</h2>
       <p>Gire uma vez por dia e ganhe prêmios!</p>
@@ -580,6 +581,7 @@ header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-
       </div>
       <div class="roleta-cd-label" id="roleta-cd-label"></div>
       <button class="btn-girar" id="btn-girar" onclick="girarRoleta()">🎰 Girar!</button>
+      <button class="roleta-result-close" onclick="fecharRoleta()" style="width:calc(100% - 0px)">✕ Fechar</button>
     </div>
     <div class="roleta-resultado" id="roleta-resultado">
       <div class="roleta-result-card" id="roleta-result-card">
