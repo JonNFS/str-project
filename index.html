@@ -507,7 +507,7 @@ header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-
     <div style="font-size:1.8rem;margin-bottom:8px">&#127918;</div>
     <h2 style="font-size:1.15rem;font-weight:800;margin-bottom:6px">Nome do Personagem</h2>
     <p style="color:var(--muted2);font-size:.82rem;margin-bottom:16px;line-height:1.5">Digite o nome exato do seu personagem no jogo. Pode alterar depois pelo menu de perfil.</p>
-    <input id="input-personagem" class="modal-input" type="text" placeholder="Ex: FlashTD"
+    <input id="input-personagem" class="modal-input" type="text" placeholder="Ex: Gunz"
            maxlength="20" autocomplete="off"
            oninput="this.value=this.value.replace(/[^a-zA-Z0-9]/g,'');verificarCharDebounce('personagem')"/>
     <div id="char-status-personagem" class="char-verify-status"></div>
@@ -537,7 +537,7 @@ header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-
       Apenas letras e n&#250;meros, m&#225;ximo 12 caracteres.
     </p>
     <input id="input-novo-nome" class="modal-input" type="text" maxlength="12"
-           placeholder="Ex: ShadowX" oninput="this.value=this.value.replace(/[^a-zA-Z0-9]/g,'')"/>
+           placeholder="Ex: ShadowX" oninput="this.value=this.value.replace(/[^a-zA-Z0-9\[\]_]/g,'')"/>
     <p id="novo-nome-erro" style="color:var(--danger);font-size:.78rem;margin-bottom:10px;min-height:18px"></p>
     <button class="btn-modal" onclick="confirmarNovoNome()">Confirmar e Adicionar ao Carrinho &#8594;</button>
     <button class="btn-modal-sec" onclick="document.getElementById('modal-novo-nome').classList.remove('open')">Cancelar</button>
@@ -608,7 +608,7 @@ header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-
     </p>
     <div class="presente-produto-nome" id="presente-produto-nome"></div>
     <input id="input-presente-nick" class="modal-input" type="text" maxlength="20"
-           placeholder="Nick do destinatario (ex: Envy)" autocomplete="off"
+           placeholder="Nick do destinatario (ex: Gunz)" autocomplete="off"
            oninput="this.value=this.value.replace(/[^a-zA-Z0-9]/g,'');verificarCharDebounce('presente')"/>
     <div id="char-status-presente" class="char-verify-status"></div>
     <div class="presente-aviso">
