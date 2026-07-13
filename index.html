@@ -2107,12 +2107,7 @@ function verificarRetornoPagamento() {
 
 // (realtime e retorno MP integrados no hook único abaixo)
 
-// Hook no logout para parar o realtime
-const _origLogout = logout;
-async function logout() {
-  pararRealtimeCarrinho();
-  await _origLogout();
-}
+// (realtime integrado no hook único de logout abaixo)
 
 // ═══════════════════════════════════════════════════════════════
 // ── VERIFICAÇÃO DE PERSONAGEM (verificar-char Edge Function) ──
@@ -2644,13 +2639,14 @@ initApp = async function(user) {
   if (btnRoleta) btnRoleta.style.display = 'flex';
 };
 
-// Esconde botão da roleta quando desloga
-const _origLogout2 = logout;
+// ─── Hook único do logout ───────────────────────────────────────
+const _origLogoutFinal = logout;
 logout = async function() {
+  pararRealtimeCarrinho();
   const btnRoleta = document.getElementById('btn-roleta-header');
   if (btnRoleta) btnRoleta.style.display = 'none';
   _cupomAplicado = null;
-  await _origLogout2();
+  await _origLogoutFinal();
 };
 
 </script>
