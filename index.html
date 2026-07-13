@@ -509,7 +509,7 @@ header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-
     <p style="color:var(--muted2);font-size:.82rem;margin-bottom:16px;line-height:1.5">Digite o nome exato do seu personagem no jogo. Pode alterar depois pelo menu de perfil.</p>
     <input id="input-personagem" class="modal-input" type="text" placeholder="Ex: Gunz"
            maxlength="20" autocomplete="off"
-           oninput="this.value=this.value.replace(/[^a-zA-Z0-9]/g,'');verificarCharDebounce('personagem')"/>
+           oninput="this.value=this.value.replace(/[^a-zA-Z0-9\[\]_]/g,'');verificarCharDebounce('personagem')"/>
     <div id="char-status-personagem" class="char-verify-status"></div>
     <button id="btn-salvar-personagem" class="btn-modal" onclick="salvarPersonagem()" disabled
             style="opacity:.45;cursor:not-allowed">Confirmar →</button>
@@ -537,7 +537,7 @@ header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-
       Apenas letras e n&#250;meros, m&#225;ximo 12 caracteres.
     </p>
     <input id="input-novo-nome" class="modal-input" type="text" maxlength="12"
-           placeholder="Ex: ShadowX" oninput="this.value=this.value.replace(/[^a-zA-Z0-9\[\]_]/g,'')"/>
+           placeholder="Ex: Gunz" oninput="this.value=this.value.replace(/[^a-zA-Z0-9\[\]_]/g,'')"/>
     <p id="novo-nome-erro" style="color:var(--danger);font-size:.78rem;margin-bottom:10px;min-height:18px"></p>
     <button class="btn-modal" onclick="confirmarNovoNome()">Confirmar e Adicionar ao Carrinho &#8594;</button>
     <button class="btn-modal-sec" onclick="document.getElementById('modal-novo-nome').classList.remove('open')">Cancelar</button>
@@ -609,7 +609,7 @@ header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-
     <div class="presente-produto-nome" id="presente-produto-nome"></div>
     <input id="input-presente-nick" class="modal-input" type="text" maxlength="20"
            placeholder="Nick do destinatario (ex: Gunz)" autocomplete="off"
-           oninput="this.value=this.value.replace(/[^a-zA-Z0-9]/g,'');verificarCharDebounce('presente')"/>
+           oninput="this.value=this.value.replace(/[^a-zA-Z0-9\[\]_]/g,'');verificarCharDebounce('presente')"/>
     <div id="char-status-presente" class="char-verify-status"></div>
     <div class="presente-aviso">
       &#9888; O presente sera entregue diretamente ao personagem informado.<br>
@@ -1532,7 +1532,7 @@ function confirmarNovoNome() {
   const erroEl = document.getElementById('novo-nome-erro');
   // Validar: apenas letras e números, max 12
   if (!novoNome) { erroEl.textContent = 'Digite o novo nome.'; return; }
-  if (!/^[a-zA-Z0-9]{1,12}$/.test(novoNome)) {
+  if (!/^[a-zA-Z0-9\[\]_]{1,12}$/.test(novoNome)) {
     erroEl.textContent = 'Use apenas letras e numeros, maximo 12 caracteres.'; return;
   }
   state.novoNome[prodId] = novoNome;
@@ -1727,7 +1727,7 @@ function abrirModalPresente(prodId) {
 function confirmarPresente() {
   const nick = document.getElementById('input-presente-nick').value.trim();
   if (!nick || nick.length < 2) { toast('Digite o nick do destinatario.', 'error'); return; }
-  if (!/^[a-zA-Z0-9]{2,20}$/.test(nick)) { toast('Nick invalido: apenas letras e numeros, 2-20 chars.', 'error'); return; }
+  if (!/^[a-zA-Z0-9\[\]_]{2,20}$/.test(nick)) { toast('Nick invalido: apenas letras, numeros, [ ] e _.', 'error'); return; }
   const produto = state.products.find(p => p.id === _presenteProdId);
   if (!produto) { toast('Produto nao encontrado.', 'error'); return; }
   document.getElementById('modal-presente').classList.remove('open');
