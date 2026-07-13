@@ -358,15 +358,15 @@ header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-
 .btn-roleta-cd:hover{transform:none;box-shadow:none}
 
 /* ── Popup da roleta ──────────────────────────────────────────── */
-#modal-roleta .modal-card{max-width:480px;padding:0;overflow:hidden;background:var(--surface)}
+#modal-roleta .modal-card{max-width:560px;width:95vw;padding:0;overflow:hidden;background:var(--surface)}
 .roleta-hdr{padding:20px 24px 0;text-align:center}
 .roleta-hdr h2{font-size:1.15rem;font-weight:900;margin-bottom:4px}
 .roleta-hdr p{font-size:.78rem;color:var(--muted2);margin-bottom:0}
 .roleta-body{padding:16px 24px 0;display:flex;flex-direction:column;align-items:center;gap:12px}
 
 /* Canvas/SVG da roleta */
-.roleta-wrap{position:relative;width:280px;height:280px;flex-shrink:0}
-.roleta-canvas{width:280px;height:280px;border-radius:50%;transition:transform 4s cubic-bezier(0.17,0.67,0.12,0.99);will-change:transform}
+.roleta-wrap{position:relative;width:360px;height:360px;flex-shrink:0}
+.roleta-canvas{width:360px;height:360px;border-radius:50%;transition:transform 4s cubic-bezier(0.17,0.67,0.12,0.99);will-change:transform}
 .roleta-ponteiro{position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-top:22px solid var(--gold);filter:drop-shadow(0 2px 4px rgba(0,0,0,.5));z-index:2}
 .roleta-centro{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;background:var(--surface);border-radius:50%;border:3px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;z-index:2;box-shadow:0 2px 8px rgba(0,0,0,.3)}
 
@@ -575,7 +575,7 @@ header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-
     <div class="roleta-body">
       <div class="roleta-wrap">
         <div class="roleta-ponteiro"></div>
-        <canvas id="roleta-canvas" class="roleta-canvas" width="280" height="280"></canvas>
+        <canvas id="roleta-canvas" class="roleta-canvas" width="360" height="360"></canvas>
         <div class="roleta-centro">🎡</div>
       </div>
       <div class="roleta-cd-label" id="roleta-cd-label"></div>
@@ -2252,11 +2252,11 @@ function _desenharRoleta(fatias, anguloOffset = 0) {
   const canvas = document.getElementById('roleta-canvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
-  const cx = 140, cy = 140, r = 130;
+  const cx = 180, cy = 180, r = 168;
   const n = fatias.length;
   if (!n) return;
   const arcSize = (2 * Math.PI) / n;
-  ctx.clearRect(0, 0, 280, 280);
+  ctx.clearRect(0, 0, 360, 360);
 
   fatias.forEach((fatia, i) => {
     const start = anguloOffset + i * arcSize - Math.PI / 2;
