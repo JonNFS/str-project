@@ -169,6 +169,8 @@ header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-
 .toast.success{border-color:rgba(34,197,94,.3)}.toast.error{border-color:rgba(239,68,68,.3)}
 @keyframes slideR{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:translateX(0)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.cash-sub-header{display:flex;align-items:center;gap:8px;font-size:.8rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);padding:16px 0 8px;border-bottom:1px solid var(--border);margin-bottom:12px}
+.cash-sub-icon{font-size:1.1rem}
 .hidden{display:none!important}.empty-section{text-align:center;padding:40px 20px;color:var(--muted);font-size:.88rem}
 @media(max-width:700px){.sidebar{display:none}.search-bar{min-width:130px}.hero-slides{height:220px}.hero-title{font-size:1.4rem}.store-content{padding:14px 16px}.products-row{grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:10px}}
 .hist-item{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px 14px}
@@ -670,7 +672,7 @@ const sb = createClient(CFG.supabaseUrl, CFG.supabaseKey, {
 });
 const CATEGORIAS = [
   { key: 'destaques', label: 'Destaques',      icon: '\u2b50',            special: 'featured' },
-  { key: 'cash',      label: 'Cash & Astrum',   icon: '\ud83d\udc8e',     tipos: ['cash', 'astrum'] },
+  { key: 'cash',      label: 'Cash & Astrum',   icon: '\ud83d\udc8e',     tipos: ['cash'] },
   { key: 'especial',  label: 'Pacotes',         icon: '\ud83d\udce6',     tipos: ['especial', 'pacote'] },
   { key: 'espada',    label: 'Espadas',         icon: '\u2694\ufe0f',      tipos: ['espada'] },
   { key: 'arma',      label: 'Armas',           icon: '\ud83d\udd2b',     tipos: ['arma'] },
@@ -1138,6 +1140,38 @@ function renderActiveSection() {
       '<span class="cat-name">' + (cat ? cat.label : '') + '</span>' +
       '</div>' + sexoHtml + '</div>' +
       '<div class="empty-section">Nenhum produto nesta categoria.</div></div>';
+    return;
+  }
+
+  // Aba Cash & Astrum: separa por qtd_cash e qtd_astrum
+  if (state.activeCat === 'cash') {
+    const cashProds   = prods.filter(p => p.qtd_cash  && +p.qtd_cash  > 0);
+    const astrumProds = prods.filter(p => p.qtd_astrum && +p.qtd_astrum > 0 && !(p.qtd_cash && +p.qtd_cash > 0));
+    const ambosProds  = prods.filter(p => p.qtd_cash && +p.qtd_cash > 0 && p.qtd_astrum && +p.qtd_astrum > 0);
+    // Cash puro + ambos juntos na seção Cash, Astrum puro na seção Astrum
+    const secCash   = prods.filter(p => p.qtd_cash && +p.qtd_cash > 0);
+    const secAstrum = prods.filter(p => p.qtd_astrum && +p.qtd_astrum > 0 && !(p.qtd_cash && +p.qtd_cash > 0));
+
+    const headerHtml = '<div class="cat-header"><div class="cat-header-left">' +
+      '<span class="cat-icon-big">' + (cat ? cat.icon : '') + '</span>' +
+      '<span class="cat-name">' + (cat ? cat.label : '') + '</span>' +
+      '<span class="cat-count">' + prods.length + ' item' + (prods.length !== 1 ? 's' : '') + '</span>' +
+      '</div></div>';
+
+    let sectionsHtml = '';
+    if (secCash.length) {
+      sectionsHtml += '<div class="cash-sub-header"><span class="cash-sub-icon">💰</span> Cash</div>' +
+        '<div class="products-row">' + secCash.map((p, i) => renderCard(p, i)).join('') + '</div>';
+    }
+    if (secAstrum.length) {
+      sectionsHtml += '<div class="cash-sub-header" style="margin-top:24px"><span class="cash-sub-icon">⭐</span> Astrum</div>' +
+        '<div class="products-row">' + secAstrum.map((p, i) => renderCard(p, i)).join('') + '</div>';
+    }
+    if (!secCash.length && !secAstrum.length) {
+      sectionsHtml = '<div class="products-row">' + prods.map((p, i) => renderCard(p, i)).join('') + '</div>';
+    }
+
+    content.innerHTML = '<div class="cat-section">' + headerHtml + sectionsHtml + '</div>';
     return;
   }
 
