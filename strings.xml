@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" ?>
+<?xml version="1.0" ?>
 <XML>
 
 <!-- Channel.xml -->
@@ -583,15 +583,15 @@
 <STR id="ZITEM_NAME_5001">Renard</STR>
 <STR id="ZITEM_DESC_5001">Esta antiga Submetralhadora foi produzida pela Canox. Sua produção foi descontinuada.</STR>
 <STR id="ZITEM_NAME_5002">Renard x2</STR>
-<STR id="ZITEM_DESC_5002">Estas antigas Submetralhadoras foram produzidas pela Canox. Sua produção foi descontinuada.</STR>
+<STR id="ZITEM_DESC_5002">Estas antigas Submetralhadora foram produzidas pela Canox. Sua produção foi descontinuada.</STR>
 <STR id="ZITEM_NAME_5003">Walcom S5</STR>
 <STR id="ZITEM_DESC_5003">Esta Submetralhadora produzida pela Walcom é bastante popular. Possui maior poder de fogo e maior capacidade de munição.</STR>
 <STR id="ZITEM_NAME_5004">Walcom S5 x2</STR>
-<STR id="ZITEM_DESC_5004">Estas Submetralhadoras produzidas pela Walcom são bastante populares. Possuem maior poder de fogo e maior capacidade de munição.</STR>
+<STR id="ZITEM_DESC_5004">Estas Submetralhadora produzidas pela Walcom são bastante populares. Possuem maior poder de fogo e maior capacidade de munição.</STR>
 <STR id="ZITEM_NAME_5005">Ellan</STR>
 <STR id="ZITEM_DESC_5005">Submetralhadora compacta da Canox. Foi desenvolvida com foco em maior mobilidade.</STR>
 <STR id="ZITEM_NAME_5006">Ellan x2</STR>
-<STR id="ZITEM_DESC_5006">Submetralhadoras compactas da Canox. Foram desenvolvidas com foco em maior mobilidade.</STR>
+<STR id="ZITEM_DESC_5006">Submetralhadora compactas da Canox. Foram desenvolvidas com foco em maior mobilidade.</STR>
 <STR id="ZITEM_NAME_5007">Renard V</STR>
 <STR id="ZITEM_DESC_5007">Modelo sucessor da antiga e popular Renard. Possui maior precisão e uma cadência de tiro mais elevada.</STR>
 <STR id="ZITEM_NAME_5008">Renard V x2</STR>
@@ -619,7 +619,7 @@
 <STR id="ZITEM_NAME_5019">Walcom S7</STR>
 <STR id="ZITEM_DESC_5019">Nova Submetralhadora da Walcom, empresa rival da Canox e da linha Renard. Seu poder de fogo foi aprimorado.</STR>
 <STR id="ZITEM_NAME_5020">Walcom S7 x2</STR>
-<STR id="ZITEM_DESC_5020">Novas Submetralhadoras da Walcom, empresa rival da Canox e da linha Renard. Seu poder de fogo foi aprimorado.</STR>
+<STR id="ZITEM_DESC_5020">Novas Submetralhadora da Walcom, empresa rival da Canox e da linha Renard. Seu poder de fogo foi aprimorado.</STR>
 
 <!-- Equipamento Free: Escopeta -->
 <STR id="ZITEM_NAME_6001">Breaker 3</STR>
@@ -3341,6 +3341,17 @@
 <STR id="ZITEM_NAME_524080">Botas do Imperador (M)</STR>
 <STR id="ZITEM_DESC_524080">Botas utilizadas pelo governante do império.</STR>
 
+<STR id="ZITEM_NAME_1000">Escopeta Fortaleza</STR>
+<STR id="ZITEM_DESC_1000">Novo visual de escopeta para seu personagem.</STR>
+<STR id="ZITEM_NAME_1001">Urza (Marine)</STR>
+<STR id="ZITEM_DESC_1001">Escopeta muito poderosa com o visual diferenciado. Era utilizado pelos rebeldes no deserto de Astra.</STR>
+<STR id="ZITEM_NAME_1002">Urza (Toxic)</STR>
+<STR id="ZITEM_DESC_1002">Escopeta muito poderosa com o visual diferenciado. Era utilizado pelos rebeldes no deserto de Astra.</STR>
+<STR id="ZITEM_NAME_1003">Escopeta Vampiro</STR>
+<STR id="ZITEM_DESC_1003">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_1004">Escopeta Verde</STR>
+<STR id="ZITEM_DESC_1004">Novo visual para seu equipamento.</STR>
+
 <STR id="ZITEM_NAME_521853">Pioneira Lava</STR>
 <STR id="ZITEM_DESC_521853">Novo visual de escopeta para seu personagem.</STR>
 <STR id="ZITEM_NAME_521854">Pioneira Marinho</STR>
@@ -4250,6 +4261,310 @@
 <STR id="ZITEM_NAME_182505">Granada Caçador de Dinossauros</STR>
 <STR id="ZITEM_DESC_182505">Novo visual para seu equipamento.</STR>
 
+<!-- 26.08.2026 -->
+<STR id="ZITEM_NAME_522200">Avatar Deadpool (F)</STR>
+<STR id="ZITEM_DESC_522200">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_522202">Avatar Deadpool (M)</STR>
+<STR id="ZITEM_DESC_522202">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_522204">Espada Deadpool</STR>
+<STR id="ZITEM_DESC_522204">Novo visual de espada para seu personagem.</STR>
+<STR id="ZITEM_NAME_522208">Pioneira Deadpool</STR>
+<STR id="ZITEM_DESC_522208">Novo visual de escopeta para seu personagem.</STR>
+<STR id="ZITEM_NAME_522206">Breaker 7 Deadpool</STR>
+<STR id="ZITEM_DESC_522206">Novo visual de escopeta para seu personagem.</STR>
+<STR id="ZITEM_NAME_522212">Granada Deadpool</STR>
+<STR id="ZITEM_DESC_522212">Novo visual de granada para seu personagem.</STR>
+
+<STR id="ZITEM_NAME_522201">Avatar Deadpool Branco (F)</STR>
+<STR id="ZITEM_DESC_522201">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_522203">Avatar Deadpool Branco (M)</STR>
+<STR id="ZITEM_DESC_522203">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_522205">Espada Deadpool Branca</STR>
+<STR id="ZITEM_DESC_522205">Novo visual de espada para seu personagem.</STR>
+<STR id="ZITEM_NAME_522207">Pioneira Deadpool Branca</STR>
+<STR id="ZITEM_DESC_522207">Novo visual de escopeta para seu personagem.</STR>
+<STR id="ZITEM_NAME_522209">Breaker 7 Deadpool Branca</STR>
+<STR id="ZITEM_DESC_522209">Novo visual de escopeta para seu personagem.</STR>
+<STR id="ZITEM_NAME_522213">Granada Deadpool Branca</STR>
+<STR id="ZITEM_DESC_522213">Novo visual de granada para seu personagem.</STR>
+
+<STR id="ZITEM_NAME_522210">Medicamento Deadpool</STR>
+<STR id="ZITEM_DESC_522210">Novo visual de medicamento para seu personagem.</STR>
+<STR id="ZITEM_NAME_522211">Reparo Deadpool</STR>
+<STR id="ZITEM_DESC_522211">Novo visual de reparo para seu personagem.</STR>
+
+<STR id="ZITEM_NAME_545363">Adaga do Corvo</STR>
+<STR id="ZITEM_DESC_545363">Novo efeito visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_545364">Espada do Corvo</STR>
+<STR id="ZITEM_DESC_545364">Novo efeito visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_545365">Revólver do Corvo</STR>
+<STR id="ZITEM_DESC_545365">Novo efeito visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_545366">Escopeta do Corvo</STR>
+<STR id="ZITEM_DESC_545366">Novo efeito visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_545367">Rifle do Corvo</STR>
+<STR id="ZITEM_DESC_545367">Novo efeito visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_545368">Medicamento do Corvo</STR>
+<STR id="ZITEM_DESC_545368">Novo efeito visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_545369">Reparo do Corvo</STR>
+<STR id="ZITEM_DESC_545369">Novo efeito visual para seu equipamento.</STR>
+
+<STR id="ZITEM_NAME_545207">Sobretudo Bozo (F)</STR>
+<STR id="ZITEM_DESC_545207">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_545208">Sobretudo Bozo (M)</STR>
+<STR id="ZITEM_DESC_545208">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_545209">Martelo Bozo</STR>
+<STR id="ZITEM_DESC_545209">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_545210">Escopeta Bozo</STR>
+<STR id="ZITEM_DESC_545210">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_545211">Granada Bozo</STR>
+<STR id="ZITEM_DESC_545211">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_545212">Pet Bozo</STR>
+<STR id="ZITEM_DESC_545212">Novo visual para seu equipamento.</STR>
+
+<STR id="ZITEM_NAME_545514">Chapéu Pato (F)</STR>
+<STR id="ZITEM_DESC_545514">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_545515">Chapéu Pato (M)</STR>
+<STR id="ZITEM_DESC_545515">Novo visual para seu personagem.</STR>
+
+<STR id="ZITEM_NAME_532264">Pentado Kimera (F)</STR>
+<STR id="ZITEM_DESC_532264">Novo penteado para seu personagem.</STR>
+<STR id="ZITEM_NAME_532265">Vestimenta Kimera (F)</STR>
+<STR id="ZITEM_DESC_532265">Nova vestimenta para seu personagem.</STR>
+<STR id="ZITEM_NAME_532266">Luvas Kimera (F)</STR>
+<STR id="ZITEM_DESC_532266">Novas luvas para seu personagem.</STR>
+<STR id="ZITEM_NAME_532267">Calças Kimera (F)</STR>
+<STR id="ZITEM_DESC_532267">Novas calças para seu personagem.</STR>
+<STR id="ZITEM_NAME_532268">Sapatos Kimera (F)</STR>
+<STR id="ZITEM_DESC_532268">Novos sapatos para seu personagem.</STR>
+
+<!-- 08.09.2026 -->
+<STR id="ZITEM_NAME_511009">Adaga Volkath</STR>  
+<STR id="ZITEM_DESC_511009">Adaga feita com as cinzas de um vulcão.</STR>
+<STR id="ZITEM_NAME_511010">Adaga Butters</STR> 
+<STR id="ZITEM_DESC_511010">Adaga simples porém que contem muito dano.</STR>
+<STR id="ZITEM_NAME_511011">Adaga Adamantium</STR> 
+<STR id="ZITEM_DESC_511011">Adaga forjada com adamantium em seu material.</STR>
+
+<STR id="ZITEM_NAME_541013">Espada Borad</STR>
+<STR id="ZITEM_DESC_541013">Espada com lâmina muito afiada.</STR>
+<STR id="ZITEM_NAME_541014">Espada Edge</STR> 
+<STR id="ZITEM_DESC_541014">Espada super leve que facilita rebater as balas.</STR>
+
+<STR id="ZITEM_NAME_562015">Espada Dupla HighLord</STR> 
+<STR id="ZITEM_DESC_562015">Espada Dupla utilizada pelos melhores guerreiros de alta classe.</STR>
+<STR id="ZITEM_NAME_562016">Espada Dupla Poison</STR> 
+<STR id="ZITEM_DESC_562016">Espada Dupla utilizada por lutadores que aplicavam seus golpes baseados nos pontos fracos dos inimigos.</STR>
+<STR id="ZITEM_NAME_562000">Espada Dupla do Pirata</STR>
+<STR id="ZITEM_DESC_562000">Lâminas feitas por piratas.</STR>
+
+<STR id="ZITEM_NAME_660001">Espada Gigante Colossal</STR>
+<STR id="ZITEM_DESC_660001">Uma espada Colossal.</STR>
+<STR id="ZITEM_NAME_660004">Espada Gigante Zorbak</STR> 
+<STR id="ZITEM_DESC_660004">Uma espada muito grande.</STR>
+<STR id="ZITEM_NAME_660005">Espada Gigante Cloud</STR>
+<STR id="ZITEM_DESC_660005">Uma espada muito grande.</STR>
+
+<STR id="ZITEM_NAME_571001">Pistolas Ivory x2</STR>
+<STR id="ZITEM_DESC_571001">Pistolas com coloração branca, utilizadas em tempos modernos.</STR>
+<STR id="ZITEM_NAME_571008">Pistolas USP Mínima x2</STR> 
+<STR id="ZITEM_DESC_571008">Pistolas danificadas num combate.</STR>
+<STR id="ZITEM_NAME_571009">Pistolas USP Tática x2</STR>
+<STR id="ZITEM_DESC_571009">Pistolas para um combate tático.</STR>
+
+<STR id="ZITEM_NAME_571100">Revólver Bisley x2</STR>
+<STR id="ZITEM_DESC_571100">Revólver utilizado pela família Bisley.</STR>
+<STR id="ZITEM_NAME_571101">Revólver Patrior x2</STR> 
+<STR id="ZITEM_DESC_571101">Revólver utilizado pela família Patrior.</STR>
+<STR id="ZITEM_NAME_571102">Revólver AMT x2</STR>
+<STR id="ZITEM_DESC_571102">Revólver AMT automático, com uma cadência de tiros muito rápida.</STR>
+
+<STR id="ZITEM_NAME_573000">SubMetralhadora Uzi x2</STR>
+<STR id="ZITEM_DESC_573000">Submetralhadora Uzi, potencialmente rápidas e silenciosas.</STR>
+<STR id="ZITEM_NAME_573001">SubMetralhadora PK23 x2</STR>
+<STR id="ZITEM_DESC_573001">Submetralhadora baseada na forma PK23.</STR>
+<STR id="ZITEM_NAME_573002">SubMetralhadora MP5K x2</STR>
+<STR id="ZITEM_DESC_573002">Submetralhadora baseada na forma MP5K.</STR>
+
+<STR id="ZITEM_NAME_576010">Escopeta Revestida</STR> 
+<STR id="ZITEM_DESC_576010">Escopeta leve que facilita o recarregamento das balas.</STR>
+<STR id="ZITEM_NAME_576011">Escopeta Pesada</STR>
+<STR id="ZITEM_DESC_576011">Escopeta muito pesada para o seu portador.</STR>
+<STR id="ZITEM_NAME_576012">Escopeta F-10</STR> 
+<STR id="ZITEM_DESC_576012">Escopeta da linhagem F na sua versão 10.</STR>
+
+<STR id="ZITEM_NAME_579004">Rifle AK70-3</STR> 
+<STR id="ZITEM_DESC_579004">Rifle de fabricação AK forma 70-3.</STR>
+<STR id="ZITEM_NAME_579006">Rifle AK47 Black</STR> 
+<STR id="ZITEM_DESC_579006">Rifle de fabricação AK em sua forma Black.</STR>
+<STR id="ZITEM_NAME_579007">Rifle AK101</STR>
+<STR id="ZITEM_DESC_579007">Rifle de fabricação AK em sua forma Black.</STR>
+
+<STR id="ZITEM_NAME_406133">Metralhadora Obliteração</STR>
+<STR id="ZITEM_DESC_406133">Metralhadora em estágio final da conhecida Nico. É extremamente poderosa e pode destruir leva de monstros com facilidade.</STR>
+<STR id="ZITEM_NAME_610501">Metralhadora RPK</STR> 
+<STR id="ZITEM_DESC_610501">Metralhadora construída por membros da facção RPK.</STR>
+<STR id="ZITEM_NAME_610502">Metralhadora WM</STR> 
+<STR id="ZITEM_DESC_610502">Metralhadora construída por membros da facção WM.</STR>
+
+<STR id="ZITEM_NAME_630000">Lançador Adam</STR>
+<STR id="ZITEM_DESC_630000">Lançador produzido por Adam.</STR>
+<STR id="ZITEM_NAME_630001">Doom Slinger</STR>
+<STR id="ZITEM_DESC_630001">Lançador produzido com liga Slinger.</STR>
+<STR id="ZITEM_NAME_630002">Imperador RL-K1</STR>
+<STR id="ZITEM_DESC_630002">Lançador do Imperador.</STR>
+
+<STR id="ZITEM_NAME_250120">Penteado da Prisioneira (F)</STR>
+<STR id="ZITEM_DESC_250120">Penteado utilizado pelo grupo de prisioneiras.</STR>
+<STR id="ZITEM_NAME_250121">Camiseta da Prisioneira (F)</STR>
+<STR id="ZITEM_DESC_250121">Camiseta utilizada pelo grupo de prisioneiras.</STR>
+<STR id="ZITEM_NAME_250122">Luvas da Prisioneira (F)</STR>
+<STR id="ZITEM_DESC_250122">Luvas utilizadas pelo grupo de prisioneiras.</STR>
+<STR id="ZITEM_NAME_250123">Calças da Prisioneira (F)</STR>
+<STR id="ZITEM_DESC_250123">Calças utilizadas pelo grupo de prisioneiras.</STR>
+<STR id="ZITEM_NAME_250124">Botas da Prisioneira (F)</STR>
+<STR id="ZITEM_DESC_250124">Botas utilizadas pelo grupo de prisioneiras.</STR>
+
+<STR id="ZITEM_NAME_250220">Penteado do Prisioneiro (M)</STR>
+<STR id="ZITEM_DESC_250220">Penteado utilizado pelo grupo de prisioneiros.</STR>
+<STR id="ZITEM_NAME_250221">Camiseta do Prisioneiro (M)</STR>
+<STR id="ZITEM_DESC_250221">Camiseta utilizada pelo grupo de prisioneiros.</STR>
+<STR id="ZITEM_NAME_250222">Luvas do Prisioneiro (M)</STR>
+<STR id="ZITEM_DESC_250222">Luvas utilizadas pelo grupo de prisioneiros.</STR>
+<STR id="ZITEM_NAME_250223">Calças do Prisioneiro (M)</STR>
+<STR id="ZITEM_DESC_250223">Calças utilizadas pelo grupo de prisioneiros.</STR>
+<STR id="ZITEM_NAME_250224">Botas do Prisioneiro (M)</STR>
+<STR id="ZITEM_DESC_250224">Botas utilizadas pelo grupo de prisioneiros.</STR>
+
+<STR id="ZITEM_NAME_545422">Adaga Plasma</STR>
+<STR id="ZITEM_DESC_545422">Novo efeito visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_545423">Espada Plasma</STR>
+<STR id="ZITEM_DESC_545423">Novo efeito visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_545424">Kodachi Plasma</STR>
+<STR id="ZITEM_DESC_545424">Novo efeito visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_545425">Espada Gigante Plasma</STR>
+<STR id="ZITEM_DESC_545425">Novo efeito visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_545426">Revólver Plasma</STR>
+<STR id="ZITEM_DESC_545426">Novo efeito visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_545427">Escopeta Plasma</STR>
+<STR id="ZITEM_DESC_545427">Novo efeito visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_545428">Rifle Plasma</STR>
+<STR id="ZITEM_DESC_545428">Novo efeito visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_545429">Metralhadora Plasma</STR>
+<STR id="ZITEM_DESC_545429">Novo efeito visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_545430">Lançador Plasma</STR>
+<STR id="ZITEM_DESC_545430">Novo efeito visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_545431">Granada Plasma</STR>
+<STR id="ZITEM_DESC_545431">Novo efeito visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_545452">Dash Plasma</STR>
+<STR id="ZITEM_DESC_545452">Novo efeito visual para seu dash.</STR>
+<STR id="ZITEM_NAME_545453">Efeito Plasma</STR>
+<STR id="ZITEM_DESC_545453">Novo efeito visual para seu efeito.</STR>
+
+<STR id="ZITEM_NAME_380652">Adaga Lua Cheia</STR>
+<STR id="ZITEM_DESC_380652">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_380653">Espada Lua Cheia</STR>
+<STR id="ZITEM_DESC_380653">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_380654">Revólver Lua Cheia</STR>
+<STR id="ZITEM_DESC_380654">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_380655">Escopeta Lua Cheia</STR>
+<STR id="ZITEM_DESC_380655">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_380656">Rifle Lua Cheia</STR>
+<STR id="ZITEM_DESC_380656">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_380657">Metralhadora Lua Cheia</STR>
+<STR id="ZITEM_DESC_380657">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_380658">Granada Lua Cheia</STR>
+<STR id="ZITEM_DESC_380658">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_380659">Medicamento Lua Cheia</STR>
+<STR id="ZITEM_DESC_380659">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_380660">Reparo Lua Cheia</STR>
+<STR id="ZITEM_DESC_380660">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_380662">Dash Lua Cheia</STR>
+<STR id="ZITEM_DESC_380662">Novo visual para seu dash.</STR>
+
+<STR id="ZITEM_NAME_522765">Espada Defensor da Paz</STR>
+<STR id="ZITEM_DESC_522765">Novo visual para sua espada.</STR>
+<STR id="ZITEM_NAME_522766">Revólver Defensor da Paz</STR>
+<STR id="ZITEM_DESC_522766">Novo visual para seu revólver.</STR>
+<STR id="ZITEM_NAME_522767">Escopeta Defensor da Paz</STR>
+<STR id="ZITEM_DESC_522767">Novo visual para sua escopeta.</STR>
+<STR id="ZITEM_NAME_522768">Rifle Defensor da Paz</STR>
+<STR id="ZITEM_DESC_522768">Novo visual para seu rifle.</STR>
+<STR id="ZITEM_NAME_522769">Metralhadora Defensor da Paz</STR>
+<STR id="ZITEM_DESC_522769">Novo visual para sua metralhadora.</STR>
+<STR id="ZITEM_NAME_522770">Granada Defensor da Paz</STR>
+<STR id="ZITEM_DESC_522770">Novo visual para sua granada.</STR>
+
+<STR id="ZITEM_NAME_522877">Espada Brilho Residual</STR>
+<STR id="ZITEM_DESC_522877">Novo visual para sua espada.</STR>
+<STR id="ZITEM_NAME_522878">Pistolas Brilho Residual</STR>
+<STR id="ZITEM_DESC_522878">Novo visual para sua pistola.</STR>
+<STR id="ZITEM_NAME_522879">Revólveres Brilho Residual</STR>
+<STR id="ZITEM_DESC_522879">Novo visual para seu revólver.</STR>
+<STR id="ZITEM_NAME_522880">Submetralhadora Brilho Residual</STR>
+<STR id="ZITEM_DESC_522880">Novo visual para sua submetralhadora.</STR>
+<STR id="ZITEM_NAME_522881">Escopeta Brilho Residual</STR>
+<STR id="ZITEM_DESC_522881">Novo visual para sua escopeta.</STR>
+<STR id="ZITEM_NAME_522882">Rifle Brilho Residual</STR>
+<STR id="ZITEM_DESC_522882">Novo visual para seu rifle.</STR>
+<STR id="ZITEM_NAME_522883">Metralhadora Brilho Residual</STR>
+<STR id="ZITEM_DESC_522883">Novo visual para sua metralhadora.</STR>
+
+<STR id="ZITEM_NAME_522886">Espada Energia Caótica</STR>
+<STR id="ZITEM_DESC_522886">Novo visual para sua espada.</STR>
+<STR id="ZITEM_NAME_522887">Pistolas Energia Caótica</STR>
+<STR id="ZITEM_DESC_522887">Novo visual para sua pistola.</STR>
+<STR id="ZITEM_NAME_522888">Revólveres Energia Caótica</STR>
+<STR id="ZITEM_DESC_522888">Novo visual para seu revólver.</STR>
+<STR id="ZITEM_NAME_522889">Submetralhadora Energia Caótica</STR>
+<STR id="ZITEM_DESC_522889">Novo visual para sua submetralhadora.</STR>
+<STR id="ZITEM_NAME_522890">Escopeta Energia Caótica</STR>
+<STR id="ZITEM_DESC_522890">Novo visual para sua escopeta.</STR>
+<STR id="ZITEM_NAME_522891">Rifle Energia Caótica</STR>
+<STR id="ZITEM_DESC_522891">Novo visual para seu rifle.</STR>
+<STR id="ZITEM_NAME_522892">Metralhadora Energia Caótica</STR>
+<STR id="ZITEM_DESC_522892">Novo visual para sua metralhadora.</STR>
+<STR id="ZITEM_NAME_522893">Lançador Energia Caótica</STR>
+<STR id="ZITEM_DESC_522893">Novo visual para seu lançador.</STR>
+
+<STR id="ZITEM_NAME_522149">Taco da Arlequina</STR>
+<STR id="ZITEM_DESC_522149">Novo visual para sua espada.</STR>
+<STR id="ZITEM_NAME_522137">Pioneira da Arlequina</STR>
+<STR id="ZITEM_DESC_522137">Novo visual para sua escopeta.</STR>
+<STR id="ZITEM_NAME_522138">Pioneira do Coringa</STR>
+<STR id="ZITEM_DESC_522138">Novo visual para sua escopeta.</STR>
+<STR id="ZITEM_NAME_522152">Breaker 7 (Arlequina)</STR>
+<STR id="ZITEM_DESC_522152">Novo visual de sapatos para sua escopeta.</STR>
+<STR id="ZITEM_NAME_522153">Breaker 7 (Coringa)</STR>
+<STR id="ZITEM_DESC_522153">Novo visual de sapatos para sua escopeta.</STR>
+
+<STR id="ZITEM_NAME_522286">Escopeta Coletora de Almas (Astras)</STR>
+<STR id="ZITEM_DESC_522286">Novo visual para sua escopeta.</STR>
+<STR id="ZITEM_NAME_522287">Escopeta Coletora de Almas (Enia)</STR>
+<STR id="ZITEM_DESC_522287">Novo visual para sua escopeta.</STR>
+<STR id="ZITEM_NAME_522288">Escopeta Coletora de Almas (Canopus)</STR>
+<STR id="ZITEM_DESC_522288">Novo visual para sua escopeta.</STR>
+<STR id="ZITEM_NAME_522289">Escopeta Coletora de Almas (Giston)</STR>
+<STR id="ZITEM_DESC_522289">Novo visual para sua escopeta.</STR>
+
+<STR id="ZITEM_NAME_506015">Escopeta Pioneira (Astrum)</STR>
+<STR id="ZITEM_DESC_506015">Estrutura interna modificada para disparos contínuos mais rápidos e maior carga de munição.</STR>
+<STR id="ZITEM_NAME_506016">Breaker 9P (Astrum)</STR>
+<STR id="ZITEM_DESC_506016">Protótipo da Breaker 9, a mais nova espingarda da Leonics. Possui excelente desempenho, mas ainda apresenta certa instabilidade.</STR>
+
+<STR id="ZITEM_NAME_652050">Sobretudo Adidas (F)</STR>
+<STR id="ZITEM_DESC_652050">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_652051">Sobretudo Lacote (F)</STR>
+<STR id="ZITEM_DESC_652051">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_652052">Sobretudo Nike (F)</STR>
+<STR id="ZITEM_DESC_652052">Novo visual para seu personagem.</STR>
+
+<STR id="ZITEM_NAME_652053">Sobretudo Adidas (F)</STR>
+<STR id="ZITEM_DESC_652053">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_652054">Sobretudo Lacote (F)</STR>
+<STR id="ZITEM_DESC_652054">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_652055">Sobretudo Nike (F)</STR>
+<STR id="ZITEM_DESC_652055">Novo visual para seu personagem.</STR>
+
 <!-- Equipamento Premium: Avatar (F) -->
 <STR id="ZITEM_NAME_530501">Avatar Sombrio (F)</STR>
 <STR id="ZITEM_DESC_530501">Este Avatar, moldado pela Sombra da Era das Trevas, transforma-se em armadura corporal quando equipado. Ele já teve poderes sobrenaturais, mas agora possui apenas poder de transformação.</STR>
@@ -4293,6 +4608,43 @@
 <STR id="ZITEM_DESC_531619">Avatar desenhado por uma caçadora de recompensas que a muito tempo atrás encontrou um diamante muito raro.</STR>
 <STR id="ZITEM_NAME_182506">Avatar Caçador de Dinossauros (F)</STR>
 <STR id="ZITEM_DESC_182506">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_530513">Avatar Múmia (F)</STR>
+<STR id="ZITEM_DESC_530513">No Egito, o corpo de pessoas ilustres eram preservados, após a morte, pelo emprego de substâncias balsâmicas.</STR>
+<STR id="ZITEM_NAME_690706">Avatar das Trevas Soberano (F)</STR>
+<STR id="ZITEM_DESC_690706">Avatar das trevas em sua versão dourada.</STR>
+<STR id="ZITEM_NAME_522123">Avatar Pluma (F)</STR>
+<STR id="ZITEM_DESC_522123">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_281760">Avatar Calzone (F)</STR>
+<STR id="ZITEM_DESC_281760">Novos sapatos para seu personagem.</STR>
+<STR id="ZITEM_NAME_281770">Avatar Astras (F)</STR>
+<STR id="ZITEM_DESC_281770">Novos sapatos para seu personagem.</STR>
+
+<STR id="ZITEM_NAME_545420">Avatar Plasma (F)</STR>
+<STR id="ZITEM_DESC_545420">Novo efeito visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_522875">Avatar Brilho Residual (F)</STR>
+<STR id="ZITEM_DESC_522875">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_522884">Avatar Energia Caótica (F)</STR>
+<STR id="ZITEM_DESC_522884">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_522135">Avatar Arlequina (F)</STR>
+<STR id="ZITEM_DESC_522135">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_380650">Avatar Lua Cheia (F)</STR>
+<STR id="ZITEM_DESC_380650">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_562500">Avatar Sailor (F)</STR>
+<STR id="ZITEM_DESC_562500">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_562501">Avatar Anny (F)</STR>
+<STR id="ZITEM_DESC_562501">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_522805">Avatar Estilosa (F)</STR>
+<STR id="ZITEM_DESC_522805">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_522906">Avatar Múmia Magma (F)</STR>
+<STR id="ZITEM_DESC_522906">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_522908">Avatar Múmia Aurora (F)</STR>
+<STR id="ZITEM_DESC_522908">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_522275">Avatar Múmia Caveira Sangrenta (F)</STR>
+<STR id="ZITEM_DESC_522275">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_522277">Avatar Múmia Venenosa (F)</STR>
+<STR id="ZITEM_DESC_522277">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_522279">Avatar Múmia Galáxia (F)</STR>
+<STR id="ZITEM_DESC_522279">Novo visual para seu personagem.</STR>
 
 <!-- Equipamento Premium: Avatar (M) -->
 <STR id="ZITEM_NAME_530001">Avatar Sombrio (M)</STR>
@@ -4337,6 +4689,37 @@
 <STR id="ZITEM_DESC_531620">Avatar desenhado por um caçador de recompensas que a muito tempo atrás encontrou um diamante muito raro.</STR>
 <STR id="ZITEM_NAME_182507">Avatar Caçador de Dinossauros (M)</STR>
 <STR id="ZITEM_DESC_182507">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_530013">Avatar Múmia (M)</STR>
+<STR id="ZITEM_DESC_530013">No Egito, o corpo de pessoas ilustres eram preservados, após a morte, pelo emprego de substâncias balsâmicas.</STR>
+<STR id="ZITEM_NAME_690806">Avatar das Trevas Soberano (M)</STR> 
+<STR id="ZITEM_DESC_690806">Avatar das trevas em sua versão dourada.</STR>
+<STR id="ZITEM_NAME_522124">Avatar Pluma (M)</STR>
+<STR id="ZITEM_DESC_522124">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_281761">Avatar Calzone (M)</STR>
+<STR id="ZITEM_DESC_281761">Novos sapatos para seu personagem.</STR>
+
+<STR id="ZITEM_NAME_545421">Avatar Plasma (M)</STR>
+<STR id="ZITEM_DESC_545421">Novo efeito visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_522876">Avatar Brilho Residual (M)</STR>
+<STR id="ZITEM_DESC_522876">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_522885">Avatar Energia Caótica (M)</STR>
+<STR id="ZITEM_DESC_522885">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_522136">Avatar Coringa (M)</STR>
+<STR id="ZITEM_DESC_522136">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_380651">Avatar Lua Cheia (M)</STR>
+<STR id="ZITEM_DESC_380651">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_522806">Avatar Estiloso (M)</STR>
+<STR id="ZITEM_DESC_522806">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_522907">Avatar Múmia Magma (M)</STR>
+<STR id="ZITEM_DESC_522907">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_522909">Avatar Múmia Aurora (M)</STR>
+<STR id="ZITEM_DESC_522909">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_522276">Avatar Múmia Caveira Sangrenta (M)</STR>
+<STR id="ZITEM_DESC_522276">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_522278">Avatar Múmia Venenosa (M)</STR>
+<STR id="ZITEM_DESC_522278">Novo visual para seu personagem.</STR>
+<STR id="ZITEM_NAME_522280">Avatar Múmia Galáxia (M)</STR>
+<STR id="ZITEM_DESC_522280">Novo visual para seu personagem.</STR>
 
 <!-- Equipamento Premium: Anel -->
 <STR id="ZITEM_NAME_525001">Anel do Especialista</STR>
@@ -4356,7 +4739,7 @@
 <STR id="ZITEM_NAME_528002">Kit de Reparo RX-S2</STR>
 <STR id="ZITEM_DESC_528002">Um kit de reparo super leve e poderoso. O Kit de Reparo RX-S2 restaura quase o dobro dos kits da série RK. (Pacote com 5 unidades)</STR>
 
-<!-- Moeda Encantada: Fogo -->
+<!-- Moeda Encantada Free: Fogo -->
 <STR id="ZITEM_NAME_600001">Moeda de Canopus</STR>
 <STR id="ZITEM_DESC_600001">[Encantamento nv. 1] Encanta a espada com fogo quando carregada. O oponente perderá AP lentamente.</STR>
 <STR id="ZITEM_NAME_600002">Selo de Canopus</STR>
@@ -4368,7 +4751,7 @@
 <STR id="ZITEM_NAME_600005">Coração de Canopus</STR>
 <STR id="ZITEM_DESC_600005">[Encantamento nv. 5] Encanta a espada com fogo quando carregada. O oponente perderá AP lentamente.</STR>
 
-<!-- Moeda Encantada: Gelo -->
+<!-- Moeda Encantada Free: Gelo -->
 <STR id="ZITEM_NAME_600101">Moeda de Enia</STR>
 <STR id="ZITEM_DESC_600101">[Encantamento nv. 1] Encanta a espada com gelo quando carregada. O oponente ficará lento por alguns segundos.</STR>
 <STR id="ZITEM_NAME_600102">Selo de Enia</STR>
@@ -4380,7 +4763,7 @@
 <STR id="ZITEM_NAME_600105">Coração de Enia</STR>
 <STR id="ZITEM_DESC_600105">[Encantamento nv. 5] Encanta a espada com gelo quando carregada. O oponente ficará lento por alguns segundos.</STR>
 
-<!-- Moeda Encantada: Eletrica -->
+<!-- Moeda Encantada Free: Eletrica -->
 <STR id="ZITEM_NAME_600201">Moeda de Winscar</STR>
 <STR id="ZITEM_DESC_600201">[Encantamento nv. 1] Encanta a espada com eletricidade quando carregada. O oponente ficará paralisado por alguns segundos.</STR>
 <STR id="ZITEM_NAME_600202">Selo de Winscar</STR>
@@ -4392,7 +4775,7 @@
 <STR id="ZITEM_NAME_600205">Coração de Winscar</STR>
 <STR id="ZITEM_DESC_600205">[Encantamento nv. 5] Encanta a espada com eletricidade quando carregada. O oponente ficará paralisado por alguns segundos.</STR>
 
-<!-- Moeda Encantada: Veneno -->
+<!-- Moeda Encantada Free: Veneno -->
 <STR id="ZITEM_NAME_600301">Moeda de Giston</STR>
 <STR id="ZITEM_DESC_600301">[Encantamento nv. 1] Encanta a espada com veneno quando carregada. O oponente perderá HP por alguns segundos.</STR>
 <STR id="ZITEM_NAME_600302">Selo de Giston</STR>
@@ -4403,6 +4786,54 @@
 <STR id="ZITEM_DESC_600304">[Encantamento nv. 4] Encanta a espada com veneno quando carregada. O oponente perderá HP por alguns segundos.</STR>
 <STR id="ZITEM_NAME_600305">Coração de Giston</STR>
 <STR id="ZITEM_DESC_600305">[Encantamento nv. 5] Encanta a espada com veneno quando carregada. O oponente perderá HP por alguns segundos.</STR>
+
+<!-- Moeda Encantada Premium: Fogo -->
+<STR id="ZITEM_NAME_610001">Moeda de Canopus</STR>
+<STR id="ZITEM_DESC_610001">[Encantamento nv. 1] Encanta a espada com fogo quando carregada. O oponente perderá AP lentamente.</STR>
+<STR id="ZITEM_NAME_610002">Selo de Canopus</STR>
+<STR id="ZITEM_DESC_610002">[Encantamento nv. 2] Encanta a espada com fogo quando carregada. O oponente perderá AP lentamente.</STR>
+<STR id="ZITEM_NAME_610003">Medalha de Canopus</STR>
+<STR id="ZITEM_DESC_610003">[Encantamento nv. 3] Encanta a espada com fogo quando carregada. O oponente perderá AP lentamente.</STR>
+<STR id="ZITEM_NAME_610004">Jóia de Canopus</STR>
+<STR id="ZITEM_DESC_610004">[Encantamento nv. 4] Encanta a espada com fogo quando carregada. O oponente perderá AP lentamente.</STR>
+<STR id="ZITEM_NAME_610005">Coração de Canopus</STR>
+<STR id="ZITEM_DESC_610005">[Encantamento nv. 5] Encanta a espada com fogo quando carregada. O oponente perderá AP lentamente.</STR>
+
+<!-- Moeda Encantada Premium: Gelo -->
+<STR id="ZITEM_NAME_610101">Moeda de Enia</STR>
+<STR id="ZITEM_DESC_610101">[Encantamento nv. 1] Encanta a espada com gelo quando carregada. O oponente ficará lento por alguns segundos.</STR>
+<STR id="ZITEM_NAME_610102">Selo de Enia</STR>
+<STR id="ZITEM_DESC_610102">[Encantamento nv. 2] Encanta a espada com gelo quando carregada. O oponente ficará lento por alguns segundos.</STR>
+<STR id="ZITEM_NAME_610103">Medalha de Enia</STR>
+<STR id="ZITEM_DESC_610103">[Encantamento nv. 3] Encanta a espada com gelo quando carregada. O oponente ficará lento por alguns segundos.</STR>
+<STR id="ZITEM_NAME_610104">Jóia de Enia</STR>
+<STR id="ZITEM_DESC_610104">[Encantamento nv. 4] Encanta a espada com gelo quando carregada. O oponente ficará lento por alguns segundos.</STR>
+<STR id="ZITEM_NAME_610105">Coração de Enia</STR>
+<STR id="ZITEM_DESC_610105">[Encantamento nv. 5] Encanta a espada com gelo quando carregada. O oponente ficará lento por alguns segundos.</STR>
+
+<!-- Moeda Encantada Premium: Eletrica -->
+<STR id="ZITEM_NAME_610201">Moeda de Winscar</STR>
+<STR id="ZITEM_DESC_610201">[Encantamento nv. 1] Encanta a espada com eletricidade quando carregada. O oponente ficará paralisado por alguns segundos.</STR>
+<STR id="ZITEM_NAME_610202">Selo de Winscar</STR>
+<STR id="ZITEM_DESC_610202">[Encantamento nv. 2] Encanta a espada com eletricidade quando carregada. O oponente ficará paralisado por alguns segundos.</STR>
+<STR id="ZITEM_NAME_610203">Medalha de Winscar</STR>
+<STR id="ZITEM_DESC_610203">[Encantamento nv. 3] Encanta a espada com eletricidade quando carregada. O oponente ficará paralisado por alguns segundos.</STR>
+<STR id="ZITEM_NAME_610204">Jóia de Winscar</STR>
+<STR id="ZITEM_DESC_610204">[Encantamento nv. 4] Encanta a espada com eletricidade quando carregada. O oponente ficará paralisado por alguns segundos.</STR>
+<STR id="ZITEM_NAME_610205">Coração de Winscar</STR>
+<STR id="ZITEM_DESC_610205">[Encantamento nv. 5] Encanta a espada com eletricidade quando carregada. O oponente ficará paralisado por alguns segundos.</STR>
+
+<!-- Moeda Encantada Premium: Veneno -->
+<STR id="ZITEM_NAME_610301">Moeda de Giston</STR>
+<STR id="ZITEM_DESC_610301">[Encantamento nv. 1] Encanta a espada com veneno quando carregada. O oponente perderá HP por alguns segundos.</STR>
+<STR id="ZITEM_NAME_610302">Selo de Giston</STR>
+<STR id="ZITEM_DESC_610302">[Encantamento nv. 2] Encanta a espada com veneno quando carregada. O oponente perderá HP por alguns segundos.</STR>
+<STR id="ZITEM_NAME_610303">Medalha de Giston</STR>
+<STR id="ZITEM_DESC_610303">[Encantamento nv. 3] Encanta a espada com veneno quando carregada. O oponente perderá HP por alguns segundos.</STR>
+<STR id="ZITEM_NAME_610304">Jóia de Giston</STR>
+<STR id="ZITEM_DESC_610304">[Encantamento nv. 4] Encanta a espada com veneno quando carregada. O oponente perderá HP por alguns segundos.</STR>
+<STR id="ZITEM_NAME_610305">Coração de Giston</STR>
+<STR id="ZITEM_DESC_610305">[Encantamento nv. 5] Encanta a espada com veneno quando carregada. O oponente perderá HP por alguns segundos.</STR>
 
 <!-- Name Color -->
 <STR id="ZITEM_NAME_8560">Nome Azul</STR>
@@ -4470,25 +4901,25 @@
 
 <!-- Dash -->
 <STR id="ZITEM_NAME_3550">Dash Azul</STR>
-<STR id="ZITEM_DESC_3550">Visual de um novo DASH para seu personagem.</STR>
+<STR id="ZITEM_DESC_3550">Visual de um novo Dash para seu personagem.</STR>
 <STR id="ZITEM_NAME_3551">Dash Verde</STR>
-<STR id="ZITEM_DESC_3551">Visual de um novo DASH para seu personagem.</STR>
+<STR id="ZITEM_DESC_3551">Visual de um novo Dash para seu personagem.</STR>
 <STR id="ZITEM_NAME_3552">Dash Rosa</STR>
-<STR id="ZITEM_DESC_3552">Visual de um novo DASH para seu personagem.</STR>
+<STR id="ZITEM_DESC_3552">Visual de um novo Dash para seu personagem.</STR>
 <STR id="ZITEM_NAME_3553">Dash Vermelho</STR>
-<STR id="ZITEM_DESC_3553">Visual de um novo DASH para seu personagem.</STR>
+<STR id="ZITEM_DESC_3553">Visual de um novo Dash para seu personagem.</STR>
 <STR id="ZITEM_NAME_3554">Dash Amarelo</STR>
-<STR id="ZITEM_DESC_3554">Visual de um novo DASH para seu personagem.</STR>
+<STR id="ZITEM_DESC_3554">Visual de um novo Dash para seu personagem.</STR>
 <STR id="ZITEM_NAME_3555">Dash Dourado</STR>
-<STR id="ZITEM_DESC_3555">Visual de um novo DASH para seu personagem.</STR>
+<STR id="ZITEM_DESC_3555">Visual de um novo Dash para seu personagem.</STR>
 <STR id="ZITEM_NAME_3556">Dash Laranja</STR>
-<STR id="ZITEM_DESC_3556">Visual de um novo DASH para seu personagem.</STR>
+<STR id="ZITEM_DESC_3556">Visual de um novo Dash para seu personagem.</STR>
 <STR id="ZITEM_NAME_3557">Dash Arco-Íris</STR>
-<STR id="ZITEM_DESC_3557">Visual de um novo DASH para seu personagem.</STR>
+<STR id="ZITEM_DESC_3557">Visual de um novo Dash para seu personagem.</STR>
 <STR id="ZITEM_NAME_3558">Dash Dragão Púrpura</STR>
-<STR id="ZITEM_DESC_3558">Visual de um novo DASH para seu personagem.</STR>
+<STR id="ZITEM_DESC_3558">Visual de um novo Dash para seu personagem.</STR>
 <STR id="ZITEM_NAME_3559">Dash Dragão Flamejante</STR>
-<STR id="ZITEM_DESC_3559">Visual de um novo DASH para seu personagem.</STR>
+<STR id="ZITEM_DESC_3559">Visual de um novo Dash para seu personagem.</STR>
 
 <!-- JJang -->
 <STR id="ZITEM_NAME_4560">JJang Tradicional</STR>
@@ -4496,35 +4927,49 @@
 
 <!-- Animações -->
 <STR id="ZITEM_NAME_7560">Premissas</STR>
-<STR id="ZITEM_DESC_7560">Uma nova animação apra seu personagem.</STR>
+<STR id="ZITEM_DESC_7560">Uma nova animação para seu personagem.</STR>
 <STR id="ZITEM_NAME_7561">Baby Shark</STR>
-<STR id="ZITEM_DESC_7561">Uma nova animação apra seu personagem.</STR>
+<STR id="ZITEM_DESC_7561">Uma nova animação para seu personagem.</STR>
 <STR id="ZITEM_NAME_7562">Bye Bye Bye</STR>
-<STR id="ZITEM_DESC_7562">Uma nova animação apra seu personagem.</STR>
+<STR id="ZITEM_DESC_7562">Uma nova animação para seu personagem.</STR>
 <STR id="ZITEM_NAME_7563">Flossing</STR>
-<STR id="ZITEM_DESC_7563">Uma nova animação apra seu personagem.</STR>
+<STR id="ZITEM_DESC_7563">Uma nova animação para seu personagem.</STR>
 <STR id="ZITEM_NAME_7564">Gangnam Style</STR>
-<STR id="ZITEM_DESC_7564">Uma nova animação apra seu personagem.</STR>
+<STR id="ZITEM_DESC_7564">Uma nova animação para seu personagem.</STR>
 <STR id="ZITEM_NAME_7565">Polichinelo</STR>
-<STR id="ZITEM_DESC_7565">Uma nova animação apra seu personagem.</STR>
+<STR id="ZITEM_DESC_7565">Uma nova animação para seu personagem.</STR>
 <STR id="ZITEM_NAME_7566">Levitação</STR>
-<STR id="ZITEM_DESC_7566">Uma nova animação apra seu personagem.</STR>
+<STR id="ZITEM_DESC_7566">Uma nova animação para seu personagem.</STR>
 <STR id="ZITEM_NAME_7567">Macaco</STR>
-<STR id="ZITEM_DESC_7567">Uma nova animação apra seu personagem.</STR>
+<STR id="ZITEM_DESC_7567">Uma nova animação para seu personagem.</STR>
 <STR id="ZITEM_NAME_7568">Passo Maraschino</STR>
-<STR id="ZITEM_DESC_7568">Uma nova animação apra seu personagem.</STR>
+<STR id="ZITEM_DESC_7568">Uma nova animação para seu personagem.</STR>
 <STR id="ZITEM_NAME_7569">Musculos</STR>
-<STR id="ZITEM_DESC_7569">Uma nova animação apra seu personagem.</STR>
+<STR id="ZITEM_DESC_7569">Uma nova animação para seu personagem.</STR>
 <STR id="ZITEM_NAME_7570">Ondas</STR>
-<STR id="ZITEM_DESC_7570">Uma nova animação apra seu personagem.</STR>
+<STR id="ZITEM_DESC_7570">Uma nova animação para seu personagem.</STR>
 <STR id="ZITEM_NAME_7571">Palmas</STR>
-<STR id="ZITEM_DESC_7571">Uma nova animação apra seu personagem.</STR>
+<STR id="ZITEM_DESC_7571">Uma nova animação para seu personagem.</STR>
 <STR id="ZITEM_NAME_7572">Pulo Heróico</STR>
-<STR id="ZITEM_DESC_7572">Uma nova animação apra seu personagem.</STR>
+<STR id="ZITEM_DESC_7572">Uma nova animação para seu personagem.</STR>
 <STR id="ZITEM_NAME_7573">Stranger Things</STR>
-<STR id="ZITEM_DESC_7573">Uma nova animação apra seu personagem.</STR>
+<STR id="ZITEM_DESC_7573">Uma nova animação para seu personagem.</STR>
 <STR id="ZITEM_NAME_7574">Wakanda Para Sempre</STR>
-<STR id="ZITEM_DESC_7574">Uma nova animação apra seu personagem.</STR>
+<STR id="ZITEM_DESC_7574">Uma nova animação para seu personagem.</STR>
+<STR id="ZITEM_NAME_7575">Os caras!</STR>
+<STR id="ZITEM_DESC_7575">Uma nova animação para seu personagem.</STR>
+
+<!-- Efeitos -->
+<STR id="ZITEM_NAME_5560">Efeito Raio Azul</STR>
+<STR id="ZITEM_DESC_5560">Visual de um novo efeito para seu personagem.</STR>
+<STR id="ZITEM_NAME_5561">Efeito Raio Verde</STR>
+<STR id="ZITEM_DESC_5561">Visual de um novo efeito para seu personagem.</STR>
+<STR id="ZITEM_NAME_5562">Efeito Raio Branco</STR>
+<STR id="ZITEM_DESC_5562">Visual de um novo efeito para seu personagem.</STR>
+<STR id="ZITEM_NAME_5563">Efeito Raio Dourado</STR>
+<STR id="ZITEM_DESC_5563">Visual de um novo efeito para seu personagem.</STR>
+<STR id="ZITEM_NAME_5564">Efeito Raio Laranja</STR>
+<STR id="ZITEM_DESC_5564">Visual de um novo efeito para seu personagem.</STR>
 
 <!-- Itens de Treino -->
 <STR id="ZITEM_NAME_321500">Adaga de Treino</STR>
@@ -4601,57 +5046,57 @@
 <STR id="ZITEM_DESC_20001">Uma coroa concedida aos vencedores do Torneio de Clãs. Somente os campeões podem possuí-la.</STR>
 
 <!-- STAFF: Itens  -->
-<STR id="ZITEM_NAME_250000">Adaga GM (999 DMG)</STR>
-<STR id="ZITEM_DESC_250000">Item exclusivo de Game Master.</STR>
-<STR id="ZITEM_NAME_250001">Adaga GM (50 DMG)</STR>
-<STR id="ZITEM_DESC_250001">Item exclusivo de Game Master.</STR>
-<STR id="ZITEM_NAME_250002">Adaga GM (0 DMG)</STR>
-<STR id="ZITEM_DESC_250002">Item exclusivo de Game Master.</STR>
+<STR id="ZITEM_NAME_252200">Adaga GM (Hitkill)</STR>
+<STR id="ZITEM_DESC_252200">Item exclusivo de Game Master.</STR>
+<STR id="ZITEM_NAME_252201">Adaga GM (50 DMG)</STR>
+<STR id="ZITEM_DESC_252201">Item exclusivo de Game Master.</STR>
+<STR id="ZITEM_NAME_252202">Adaga GM (0 DMG)</STR>
+<STR id="ZITEM_DESC_252202">Item exclusivo de Game Master.</STR>
 
-<STR id="ZITEM_NAME_250003">Espada GM (9999 Range)</STR>
-<STR id="ZITEM_DESC_250003">Item exclusivo de Game Master.</STR>
-<STR id="ZITEM_NAME_250004">Espada GM (220 Range)</STR>
-<STR id="ZITEM_DESC_250004">Item exclusivo de Game Master.</STR>
+<STR id="ZITEM_NAME_252203">Espada GM (9999 Range)</STR>
+<STR id="ZITEM_DESC_252203">Item exclusivo de Game Master.</STR>
+<STR id="ZITEM_NAME_252204">Espada GM (220 Range)</STR>
+<STR id="ZITEM_DESC_252204">Item exclusivo de Game Master.</STR>
 
-<STR id="ZITEM_NAME_250005">Kodachi GM (9999 Range)</STR>
-<STR id="ZITEM_DESC_250005">Item exclusivo de Game Master.</STR>
-<STR id="ZITEM_NAME_250006">Kodachi GM (220 Range)</STR>
-<STR id="ZITEM_DESC_250006">Item exclusivo de Game Master.</STR>
+<STR id="ZITEM_NAME_252205">Kodachi GM (9999 Range)</STR>
+<STR id="ZITEM_DESC_252205">Item exclusivo de Game Master.</STR>
+<STR id="ZITEM_NAME_252206">Kodachi GM (220 Range)</STR>
+<STR id="ZITEM_DESC_252206">Item exclusivo de Game Master.</STR>
 
-<STR id="ZITEM_NAME_250007">Espada Gigante GM (9999 Range)</STR>
-<STR id="ZITEM_DESC_250007">Item exclusivo de Game Master.</STR>
-<STR id="ZITEM_NAME_250008">Espada Gigante GM (230 Range)</STR>
-<STR id="ZITEM_DESC_250008">Item exclusivo de Game Master.</STR>
+<STR id="ZITEM_NAME_252207">Espada Gigante GM (9999 Range)</STR>
+<STR id="ZITEM_DESC_252207">Item exclusivo de Game Master.</STR>
+<STR id="ZITEM_NAME_252208">Espada Gigante GM (230 Range)</STR>
+<STR id="ZITEM_DESC_252208">Item exclusivo de Game Master.</STR>
 
-<STR id="ZITEM_NAME_250009">Pistola GM</STR>
-<STR id="ZITEM_DESC_250009">Item exclusivo de Game Master.</STR>
-<STR id="ZITEM_NAME_250010">Revólver GM</STR>
-<STR id="ZITEM_DESC_250010">Item exclusivo de Game Master.</STR>
-<STR id="ZITEM_NAME_250011">Submetralhadora GM</STR>
-<STR id="ZITEM_DESC_250011">Item exclusivo de Game Master.</STR>
-<STR id="ZITEM_NAME_250012">Escopeta GM</STR>
-<STR id="ZITEM_DESC_250012">Item exclusivo de Game Master.</STR>
-<STR id="ZITEM_NAME_250013">Rifle GM</STR>
-<STR id="ZITEM_DESC_250013">Item exclusivo de Game Master.</STR>
-<STR id="ZITEM_NAME_250014">Metralhadora GM</STR>
-<STR id="ZITEM_DESC_250014">Item exclusivo de Game Master.</STR>
-<STR id="ZITEM_NAME_250015">Bazuca GM</STR>
-<STR id="ZITEM_DESC_250015">Item exclusivo de Game Master.</STR>
-<STR id="ZITEM_NAME_250016">Granda GM</STR>
-<STR id="ZITEM_DESC_250016">Item exclusivo de Game Master.</STR>
-<STR id="ZITEM_NAME_250017">Flashbang GM</STR>
-<STR id="ZITEM_DESC_250017">Item exclusivo de Game Master.</STR>
-<STR id="ZITEM_NAME_250018">Smoke GM</STR>
-<STR id="ZITEM_DESC_250018">Item exclusivo de Game Master.</STR>
-<STR id="ZITEM_NAME_250019">Medkit GM</STR>
-<STR id="ZITEM_DESC_250019">Item exclusivo de Game Master.</STR>
-<STR id="ZITEM_NAME_250020">Repairkit GM</STR>
-<STR id="ZITEM_DESC_250020">Item exclusivo de Game Master.</STR>
+<STR id="ZITEM_NAME_252209">Pistola GM</STR>
+<STR id="ZITEM_DESC_252209">Item exclusivo de Game Master.</STR>
+<STR id="ZITEM_NAME_252210">Revólver GM</STR>
+<STR id="ZITEM_DESC_252210">Item exclusivo de Game Master.</STR>
+<STR id="ZITEM_NAME_252211">Submetralhadora GM</STR>
+<STR id="ZITEM_DESC_252211">Item exclusivo de Game Master.</STR>
+<STR id="ZITEM_NAME_252212">Escopeta GM</STR>
+<STR id="ZITEM_DESC_252212">Item exclusivo de Game Master.</STR>
+<STR id="ZITEM_NAME_252213">Rifle GM</STR>
+<STR id="ZITEM_DESC_252213">Item exclusivo de Game Master.</STR>
+<STR id="ZITEM_NAME_252214">Metralhadora GM</STR>
+<STR id="ZITEM_DESC_252214">Item exclusivo de Game Master.</STR>
+<STR id="ZITEM_NAME_252215">Bazuca GM</STR>
+<STR id="ZITEM_DESC_252215">Item exclusivo de Game Master.</STR>
+<STR id="ZITEM_NAME_252216">Granda GM</STR>
+<STR id="ZITEM_DESC_252216">Item exclusivo de Game Master.</STR>
+<STR id="ZITEM_NAME_252217">Flashbang GM</STR>
+<STR id="ZITEM_DESC_252217">Item exclusivo de Game Master.</STR>
+<STR id="ZITEM_NAME_252218">Smoke GM</STR>
+<STR id="ZITEM_DESC_252218">Item exclusivo de Game Master.</STR>
+<STR id="ZITEM_NAME_252219">Medkit GM</STR>
+<STR id="ZITEM_DESC_252219">Item exclusivo de Game Master.</STR>
+<STR id="ZITEM_NAME_252220">Repairkit GM</STR>
+<STR id="ZITEM_DESC_252220">Item exclusivo de Game Master.</STR>
 
-<STR id="ZITEM_NAME_250021">Anel GM (999999 HP)</STR>
-<STR id="ZITEM_DESC_250021">Item exclusivo de Game Master.</STR>
-<STR id="ZITEM_NAME_250022">Anel GM (3000 HP)</STR>
-<STR id="ZITEM_DESC_250022">Item exclusivo de Game Master.</STR>
+<STR id="ZITEM_NAME_252221">Anel GM (999999 HP)</STR>
+<STR id="ZITEM_DESC_252221">Item exclusivo de Game Master.</STR>
+<STR id="ZITEM_NAME_252222">Anel GM (3000 HP)</STR>
+<STR id="ZITEM_DESC_252222">Item exclusivo de Game Master.</STR>
 
 <STR id="ZITEM_NAME_399998">Casaco GM (F)</STR>
 <STR id="ZITEM_DESC_399998">Casaco exclusivo de Game Master.</STR>
@@ -5788,7 +6233,7 @@ Olimpo Dourado x2/c0xFFF0F8FF/e
 <STR id="ACHIEVEMENT_HOWTO_1108">Obtenha ao menos 5 pontos de Estilo em 50 partidas concluídas. Corridas e transições na parede e evasões sem dano concedem Estilo.</STR>
 <STR id="ACHIEVEMENT_HOWTO_1109">Execute Pulo, Dash, Corte aéreo e Defesa 100 vezes.</STR>
 <STR id="ACHIEVEMENT_HOWTO_1110">Segure o Corte, troque para uma arma e atire ao pousar 100 vezes.</STR>
-<STR id="ACHIEVEMENT_HOWTO_1111">Execute um Slash Shot com um dash de arma na direção oposta antes de pousar 100 vezes.</STR>
+<STR id="ACHIEVEMENT_HOWTO_1111">Execute um Slash Shot com um Dash de arma na direção oposta antes de pousar 100 vezes.</STR>
 <STR id="ACHIEVEMENT_HOWTO_1201">Vença 100 partidas de Duelo.</STR>
 <STR id="ACHIEVEMENT_HOWTO_1202">Vença 50 partidas de Solo Death Match.</STR>
 <STR id="ACHIEVEMENT_HOWTO_1203">Vença 100 partidas de Team Death Match.</STR>
