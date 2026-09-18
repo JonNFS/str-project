@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" ?>
+<?xml version="1.0" ?>
 <XML>
 
 <!-- Channel.xml -->
@@ -3341,6 +3341,17 @@
 <STR id="ZITEM_NAME_524080">Botas do Imperador (M)</STR>
 <STR id="ZITEM_DESC_524080">Botas utilizadas pelo governante do império.</STR>
 
+<STR id="ZITEM_NAME_1000">Escopeta Fortaleza</STR>
+<STR id="ZITEM_DESC_1000">Novo visual de escopeta para seu personagem.</STR>
+<STR id="ZITEM_NAME_1001">Urza (Marine)</STR>
+<STR id="ZITEM_DESC_1001">Escopeta muito poderosa com o visual diferenciado. Era utilizado pelos rebeldes no deserto de Astra.</STR>
+<STR id="ZITEM_NAME_1002">Urza (Toxic)</STR>
+<STR id="ZITEM_DESC_1002">Escopeta muito poderosa com o visual diferenciado. Era utilizado pelos rebeldes no deserto de Astra.</STR>
+<STR id="ZITEM_NAME_1003">Escopeta Vampiro</STR>
+<STR id="ZITEM_DESC_1003">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_1004">Escopeta Verde</STR>
+<STR id="ZITEM_DESC_1004">Novo visual para seu equipamento.</STR>
+
 <STR id="ZITEM_NAME_521853">Pioneira Lava</STR>
 <STR id="ZITEM_DESC_521853">Novo visual de escopeta para seu personagem.</STR>
 <STR id="ZITEM_NAME_521854">Pioneira Marinho</STR>
@@ -4554,6 +4565,47 @@
 <STR id="ZITEM_NAME_652055">Sobretudo Nike (F)</STR>
 <STR id="ZITEM_DESC_652055">Novo visual para seu personagem.</STR>
 
+<!-- 14.09.2026 -->
+<STR id="ZITEM_NAME_380700">Shura Renascida</STR>
+<STR id="ZITEM_DESC_380700">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_380701">Shura Renascida (Dourada)</STR>
+<STR id="ZITEM_DESC_380701">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_380702">Shura Renascida (Prata)</STR>
+<STR id="ZITEM_DESC_380702">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_380703">Shura Renascida (Bronze)</STR>
+<STR id="ZITEM_DESC_380703">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_380704">Shura Renascida (Galáxia)</STR>
+<STR id="ZITEM_DESC_380704">Novo visual para seu equipamento.</STR>
+
+<STR id="ZITEM_NAME_582624">Shura Branca</STR>
+<STR id="ZITEM_DESC_582624">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_582625">Shura Verde</STR>
+<STR id="ZITEM_DESC_582625">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_582626">Shura Negativa</STR>
+<STR id="ZITEM_DESC_582626">Novo visual para seu equipamento.</STR>
+
+<STR id="ZITEM_NAME_582620">Shura Dragão das Nuvens</STR>
+<STR id="ZITEM_DESC_582620">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_582621">Shura Dragão Tóxico</STR>
+<STR id="ZITEM_DESC_582621">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_582622">Shura Dragão de Gelo</STR>
+<STR id="ZITEM_DESC_582622">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_582623">Shura Dragão Astras</STR>
+<STR id="ZITEM_DESC_582623">Novo visual para seu equipamento.</STR>
+
+<STR id="ZITEM_NAME_380705">Hydra Renascida (Dourada)</STR>
+<STR id="ZITEM_DESC_380705">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_380706">Hydra Renascida (Prata)</STR>
+<STR id="ZITEM_DESC_380706">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_380707">Hydra Renascida (Bronze)</STR>
+<STR id="ZITEM_DESC_380707">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_380708">Hydra Renascida (Galáxia)</STR>
+<STR id="ZITEM_DESC_380708">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_380709">Hydra Renascida (Exército)</STR>
+<STR id="ZITEM_DESC_380709">Novo visual para seu equipamento.</STR>
+<STR id="ZITEM_NAME_380710">Hydra Renascida (Enferrujada)</STR>
+<STR id="ZITEM_DESC_380710">Novo visual para seu equipamento.</STR>
+
 <!-- Equipamento Premium: Avatar (F) -->
 <STR id="ZITEM_NAME_530501">Avatar Sombrio (F)</STR>
 <STR id="ZITEM_DESC_530501">Este Avatar, moldado pela Sombra da Era das Trevas, transforma-se em armadura corporal quando equipado. Ele já teve poderes sobrenaturais, mas agora possui apenas poder de transformação.</STR>
@@ -5275,7 +5327,9 @@ Olimpo Dourado x2/c0xFFF0F8FF/e
 <STR id="UI_OPTION_AUTORECORD">Gravar Automaticamente</STR>
 <STR id="UI_OPTION_CHARZOOM">Zoom do Personagem</STR>
 <STR id="UI_OPTION_SCROLLSPECIALITEMS">Itens especiais no Scroll</STR>
-<STR id="UI_OPTION_SHOTSTATS">Estatísticas do Tiro</STR>
+<STR id="UI_OPTION_SHOTSTATS">Mostrar Percentual de Acertos da Rodada</STR>
+<STR id="UI_SHOT_ACCURACY">Acertos/Tiros</STR>
+<STR id="UI_OPTION_SHOW_GLOBAL_CHAT">Mostrar Mensagens do Chat Global</STR>
 <STR id="UI_OPTION_MOVECHARACTERBACK">Movimentar coluna do personagem ao andar</STR>
 <STR id="UI_OPTION_SECOND_PAGE">Página 2</STR>
 <STR id="UI_OPTION_DISPLAY_DAMAGE_COUNT_ON_HIT">Mostrar Dano em Corpos de Inimigos</STR>
